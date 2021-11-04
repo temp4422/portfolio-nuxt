@@ -20,16 +20,16 @@ Rampart One, Kalam, Roboto
 *,
 *::before,
 *::after {
-  width: 100%;
+  width: 100%; /* set on all elements, so unset on particular */
   height: auto;
+  /* height: 100%; */
   padding: 0;
   border: 0;
   margin: 0;
   box-sizing: inherit;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 html {
-  width: 100%;
   height: 100%;
   overflow: hidden;
 }
@@ -38,21 +38,16 @@ body {
   font-family: 'Kalam', 'Roboto', sans-serif;
   background: var(--black);
   color: var(--light-grey);
-  width: 100%;
   /* height: 100%; DON NOT CHANGE MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
   max-height: 100%;
-  overflow-x: hidden;
-  display: grid;
-  place-items: center;
   scroll-behavior: smooth;
 }
 .root {
   max-width: 768px;
-  width: 100%;
   height: 100%;
-  overflow-x: hidden;
   display: grid;
   place-items: center;
+  margin: 0 auto;
   padding: 0 2rem;
 }
 .lock-scroll {
@@ -61,19 +56,15 @@ body {
 
 /****************************** MAIN ******************************/
 .main {
-  width: 100%;
   height: 100%;
   display: grid;
   place-items: center;
-  overflow-x: hidden;
 }
 .section {
-  width: 100%;
   height: 100%;
   padding: 0 0 8rem 0;
   display: grid;
   place-items: center;
-  overflow-x: hidden;
 }
 /* .container {
   display: grid;
@@ -103,7 +94,6 @@ body {
   margin: 0;
   padding: 0;
   object-fit: contain;
-  width: 100%;
   max-width: 100%;
   height: auto;
 }

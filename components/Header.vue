@@ -11,7 +11,6 @@
   right: -100%;
   background: rgba(206, 206, 206, 0.507);
   transition: var(--transision-time-in) ease-out;
-  width: 100%;
   height: 100%;
   padding: 8rem 0 0 0;
   z-index: 200;
@@ -27,13 +26,11 @@
   transition: calc(var(--transision-time-out) / 1.5) ease;
 }
 .nav__panel__top {
-  width: 100%;
   display: grid;
   place-items: center;
   place-content: center;
 }
 .nav__panel__bottom {
-  width: 100%;
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
@@ -47,7 +44,8 @@
   height: 3rem;
 }
 .sun-svg {
-  /* display: none; */
+  width: 100%;
+  display: none;
 }
 .moon-svg {
   display: none;
@@ -87,7 +85,6 @@
   }
 }
 .nav__menu__line {
-  width: 100%;
   height: 0.5rem;
   /* background: var(--black); */
   background: #000;

@@ -2,13 +2,11 @@
 /****************************** SECTIONS ******************************/
 /* SECTION-HOME */
 .section-home {
-  /* display: none; */
   padding-bottom: 20rem;
 }
 .typewriter-container {
   display: grid;
   place-items: center;
-  width: 100%;
   height: 4rem;
   margin: 30vh 0;
 }
@@ -19,10 +17,8 @@
 /* SECTION-WORKS */
 .section-works {
   display: grid;
-  /* display: none; */
 }
 .works-container {
-  width: 100%;
   max-width: 30rem;
   height: auto;
   margin: 2rem 2rem;
@@ -32,7 +28,6 @@
   overflow: hidden;
 }
 .work-item {
-  width: 100%;
   height: 12rem;
   margin: 4rem 0 0 0;
   padding: 0;
@@ -44,17 +39,18 @@
 .work-item__x-drive {
   margin-top: 2rem;
 }
-
+.work-item__playground {
+  overflow-x: auto;
+  /* CURRENTLY BROKEN SHADOW!!!!!!!!! */
+}
 /* SECTION-ABOUT */
 .section-about {
-  display: none;
   display: grid;
 }
 .about-text {
   margin-bottom: 4rem;
 }
 .web-core {
-  width: 100%;
   height: 100%;
   margin: 4rem;
   display: grid;
@@ -69,7 +65,6 @@ l.web-core__svg {
   /* margin: 0 1rem; */
 }
 .jamstack-logo {
-  width: 100%;
   height: auto;
   margin: 4rem 0;
   border-radius: 8px;
