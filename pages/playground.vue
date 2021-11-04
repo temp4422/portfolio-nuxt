@@ -1,6 +1,6 @@
 <style scoped>
 * {
-  border-radius: 4px;
+  border-radius: 8px;
 }
 .object-3d {
   border-radius: 20px;
@@ -9,36 +9,63 @@
 }
 .section-guess-number {
   height: auto;
-  place-items: start;
-  /* height: 80rem; */
+  display: grid;
+  place-items: center;
 }
 .guess-number__form {
-  height: auto;
+  /* height: auto; */
+  display: grid;
+  place-items: center;
 }
 .guess-number__form__label {
-  display: block;
-  margin: 2rem 0;
+  text-align: center;
+  height: auto;
+  margin: 0 0 1rem 0;
 }
 .guess-number__form__input {
-  display: block;
-  margin: 2rem 0;
+  margin: 1rem 0;
   max-width: 10rem;
+  height: 2rem;
 }
 .guess-number__form__submit {
   display: block;
-  margin: 2rem 0;
+  margin: 1rem 0;
   max-width: 10rem;
+  height: 2rem;
 }
 
 .guess-number__results {
-  height: auto;
+  width: 80%;
+  /* height: auto; */
   margin: 2rem 0;
-  /* max-width: 20rem; */
+  display: grid;
+  place-items: center;
+  /* height: rem; */
+}
+.guess-number__results__guesses {
+  min-height: 2rem;
+}
+.guess-number__results__last-result {
+  height: auto;
+}
+.guess-number__results__low-or-hi {
+  height: auto;
+}
+.p-easter {
+  height: auto;
+  max-width: 10rem;
+  max-height: 3rem;
+  opacity: 0;
+  cursor: pointer;
+}
+.p-easter:hover {
+  opacity: 1;
 }
 </style>
 
 <template>
   <main class="main">
+    <h1 class="h1">PLAYGROUND</h1>
     <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls> </model-viewer>
 
     <hr class="hr" />
@@ -53,10 +80,12 @@
       </div>
 
       <div class="resultParas guess-number__results">
-        <p class="guesses"></p>
-        <p class="lastResult"></p>
-        <p class="lowOrHi"></p>
+        <p class="guesses guess-number__results__guesses"></p>
+        <p class="lastResult guess-number__results__last-result"></p>
+        <p class="lowOrHi guess-number__results__low-or-hi"></p>
       </div>
+
+      <p class="p p-easter" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')">Did you find easter ?</p>
     </section>
     <!-- <a
       frameborder="0"
@@ -110,6 +139,9 @@ export default {
         } else if (userGuess > randomNumber) {
           lowOrHi.textContent = 'Last guess was too high!'
         }
+        // else if (userGuess == 'secret') {
+        //   lastResult.textContent = '!!! CONGRATULATIONS! YOU GOT THE SECRET! !!!'
+        // }
       }
 
       guessCount++
@@ -149,7 +181,7 @@ export default {
     }
 
     // Styling
-    guesses.style.backgroundColor = 'tan'
+    guesses.style.backgroundColor = 'indigo'
     guesses.style.fontSize = '200%'
     guesses.style.padding = '10px'
     guesses.style.boxShadow = '3px 3px 6px black'
