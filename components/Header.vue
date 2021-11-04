@@ -1,12 +1,5 @@
 <style>
-.header {
-  overflow-x: hidden;
-}
-.nav {
-  overflow-x: hidden;
-}
 .nav__panel {
-  /* height: 100vh; */
   position: fixed;
   top: 0;
   right: -100%;
@@ -16,39 +9,44 @@
   z-index: 200;
   backdrop-filter: blur(2px);
   display: grid;
-  grid-template: 1fr 5rem / 1fr;
+  grid-template: minmax(max-content, 1fr) max-content / 1fr;
   gap: var(--nav-links-gap);
   place-items: start center;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .show-nav__panel {
   right: 0;
   transition: calc(var(--transision-time-out) / 1.5) ease;
 }
 .nav__panel__top {
+  height: auto;
   display: grid;
   place-items: center;
   place-content: center;
+  overflow: hidden;
 }
 .nav__panel__bottom {
+  height: auto;
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+  place-items: center;
+  overflow: hidden;
 }
 .nav__link {
   text-decoration: none;
-  min-height: 100%;
   overflow: hidden;
+  margin: 1rem;
 }
 .nav__svg {
-  margin: 1rem;
-  min-width: 3rem;
-  min-height: 3rem;
+  display: grid;
+  place-items: center;
+  place-content: center;
   overflow: hidden;
 }
 .sun-svg {
   width: 100%;
-  /* display: none; */
+  display: none;
 }
 .moon-svg {
   width: 100%;
@@ -219,7 +217,7 @@
         </div>
 
         <div class="nav__panel__bottom">
-          <div class="svg nav__svg language-svg">
+          <div class="svg nav__link nav__svg language-svg">
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M4 16h40M24 46c12.15 0 22-9.85 22-22S36.15 2 24 2 2 11.85 2 24s9.85 22 22 22Zm0 0c6 0 8-10 8-22S30 2 24 2s-8 10-8 22 2 22 8 22ZM4 32h40H4Z"
@@ -228,7 +226,7 @@
               />
             </svg>
           </div>
-          <div class="svg nav__svg sun-svg">
+          <div class="svg nav__link nav__svg sun-svg">
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z"
@@ -236,7 +234,7 @@
               />
             </svg>
           </div>
-          <div class="svg nav__svg moon-svg">
+          <div class="svg nav__link nav__svg moon-svg">
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M21 3C13.5 3 4.5 10.5 4.5 22.5s9 21 21 21S45 34.5 45 27C28.5 37.5 10.5 19.5 21 3Z"
@@ -265,8 +263,11 @@ export default {
     function showMenu() {
       menu.classList.toggle('show-nav__menu')
       navLinks.classList.toggle('show-nav__panel')
-      if (Window.innerWidth < 768) {
+
+      let intViewportWidth = window.innerWidth
+      if (intViewportWidth < 768) {
         body.classList.toggle('lock-scroll')
+        console.log(' OO  K K\nO  O KK\n 00  K K')
       }
     }
 

@@ -86,7 +86,7 @@
     </div>
 
     <div class="p p-center">
-      <p>Built with Nuxt, Netlify, Google and sincere developer's effort :)</p>
+      <p>Built with Nuxt, Netlify, Google and sincere developer's efforts :)</p>
     </div>
   </footer>
 </template>

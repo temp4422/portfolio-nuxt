@@ -10,6 +10,7 @@
   place-items: center;
   height: 4rem;
   margin: 30vh 0;
+  overflow: hidden;
 }
 .quote-intro {
   margin: 25% 0 0 0;
@@ -66,7 +67,7 @@
 }
 .jamstack-logo {
   height: auto;
-  margin: 4rem 0;
+  margin: 4rem 0 0 0;
   border-radius: 8px;
 }
 </style>
@@ -120,7 +121,6 @@
     <section class="section section-about" id="about">
       <h1 class="h1 h1-about">ABOUT</h1>
       <p class="p-center about-text">Building responsive mobile first websites.</p>
-      <p class="p">You can't build what you can't imagine. The opposite is also true, with modern web technologies, you can make what ever you want.</p>
       <div class="about-web">
         <div class="svg about-web__svg js-scroll fade-in">
           <svg fill="none" height="100" width="87" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 141.532">
@@ -151,7 +151,7 @@
           </svg>
         </div>
       </div>
-      <p class="p">Learning and working with JAMstack, most rapid and advanced web technologies stack for increased speed and reliability.</p>
+      <p class="p">You can't build what you can't imagine. Therefore, with modern web technologies, you can build what ever you want.</p>
       <div class="svg jamstack-logo js-scroll fade-in">
         <svg width="602" height="173" viewBox="150 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill="none" d="M0 0h602v173H0z" />
@@ -167,6 +167,7 @@
           />
         </svg>
       </div>
+      <p class="p">Learning and working with JAMstack, most rapid and advanced web technologies stack for increased speed and reliability.</p>
     </section>
   </main>
 </template>

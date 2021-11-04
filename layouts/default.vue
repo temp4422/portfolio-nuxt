@@ -51,7 +51,6 @@ body {
 .lock-scroll {
   overflow: hidden;
 }
-
 /****************************** MAIN ******************************/
 .main {
   display: grid;
