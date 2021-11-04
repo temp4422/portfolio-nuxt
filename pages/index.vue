@@ -57,13 +57,10 @@
   grid-auto-flow: column;
   place-items: center;
   place-content: space-evenly;
-  /* gap: 3rem; */
 }
 .about-web__svg {
   height: auto;
   width: 3rem;
-  /* padding: 1rem; */
-  /* margin: 0 1rem; */
 }
 .jamstack-logo {
   height: auto;

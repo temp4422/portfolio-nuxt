@@ -159,7 +159,18 @@
       </button>
       <div class="nav__panel">
         <div class="nav__panel__top">
-          <a class="a nav__link" href="#home">
+          <NuxtLink to="/#home" class=""
+            ><div class="svg nav__svg home-svg">
+              <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0 0h48v48H0z" />
+                <path
+                  d="M6 26h2v14c0 2.206 1.794 4 4 4h24c2.206 0 4-1.794 4-4V26h2a2 2 0 0 0 1.414-3.414l-18-18a1.998 1.998 0 0 0-2.828 0l-18 18A2 2 0 0 0 6 26Zm14 14V30h8v10h-8Zm4-31.172 12 12V30l.002 10H32V30c0-2.206-1.794-4-4-4h-8c-2.206 0-4 1.794-4 4v10h-4V20.828l12-12Z"
+                  fill="#202020"
+                />
+              </svg></div
+          ></NuxtLink>
+
+          <!-- <a class="a nav__link" href="#home">
             <div class="svg nav__svg home-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -169,7 +180,7 @@
                 />
               </svg>
             </div>
-          </a>
+          </a> -->
           <a class="a nav__link" href="#works">
             <div class="svg nav__svg work-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -204,7 +215,7 @@
               </svg>
             </div>
           </a>
-          <a class="a nav__link" href="./src/playground.html">
+          <a class="a nav__link" href="/playground">
             <div class="svg nav__svg play-svg">
               <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -263,11 +274,9 @@ export default {
     function showMenu() {
       menu.classList.toggle('show-nav__menu')
       navLinks.classList.toggle('show-nav__panel')
-
       let intViewportWidth = window.innerWidth
       if (intViewportWidth < 768) {
         body.classList.toggle('lock-scroll')
-        console.log(' OO  K K\nO  O KK\n 00  K K')
       }
     }
 

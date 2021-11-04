@@ -68,6 +68,7 @@ body {
 .hr {
   margin: 10rem 0;
   width: 80%;
+  height: 0.1rem;
   background: var(--light-grey);
   border: 1px solid var(--light-grey);
   border-radius: 8px;

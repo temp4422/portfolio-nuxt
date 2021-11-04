@@ -1,38 +1,158 @@
-<style>
+<style scoped>
+* {
+  border-radius: 4px;
+}
 .object-3d {
   border-radius: 20px;
-  margin: 10rem auto 0 auto;
-  width: 30rem;
+  margin: 10rem auto;
   height: 20rem;
+}
+.section-guess-number {
+  height: auto;
+  place-items: start;
+  /* height: 80rem; */
+}
+.guess-number__form {
+  height: auto;
+}
+.guess-number__form__label {
+  display: block;
+  margin: 2rem 0;
+}
+.guess-number__form__input {
+  display: block;
+  margin: 2rem 0;
+  max-width: 10rem;
+}
+.guess-number__form__submit {
+  display: block;
+  margin: 2rem 0;
+  max-width: 10rem;
+}
+
+.guess-number__results {
+  height: auto;
+  margin: 2rem 0;
+  /* max-width: 20rem; */
 }
 </style>
 
 <template>
   <main class="main">
-    <div>
-      <model-viewer
-        class="object-3d"
-        alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
-        src="./assets/x-drive.glb"
-        ar
-        ar-modes="webxr scene-viewer quick-look"
-        camera-controls
-      >
-      </model-viewer>
-    </div>
+    <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls> </model-viewer>
 
-    <!-- <a frameborder="0" data-theme="dark" data-layers="1,2,3,4" data-stack-embed="true"
-            href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"></a>
-          <script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script> -->
-    <!-- <div>
-          <a frameborder="0" data-theme="light" data-layers="1,2,3,4" data-stack-embed="true"
-            href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"></a>
-          <script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script>
-        </div> -->
+    <hr class="hr" />
+
+    <section class="section section-guess-number">
+      <h1 class="h1">GUESS NUMBER 1.0</h1>
+      <p class="p">Guess a random number between 1 and 100. Can you ?</p>
+      <div class="form guess-number__form">
+        <label class="guess-number__form__label" for="guessField">Enter a guess: </label>
+        <input class="guessField guess-number__form__input" type="text" id="guessField" />
+        <input class="guessSubmit guess-number__form__submit" type="submit" value="Guess!" />
+      </div>
+
+      <div class="resultParas guess-number__results">
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+      </div>
+    </section>
+    <!-- <a
+      frameborder="0"
+      data-theme="dark"
+      data-layers="1,2,3,4"
+      data-stack-embed="true"
+      href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"
+    ></a>
+    <script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script> -->
+
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   </main>
 </template>
 
 <script scoped>
-export default {}
+export default {
+  mounted() {
+    // Your JavaScript goes here
+    let randomNumber = Math.floor(Math.random() * 100) + 1
+
+    const guesses = document.querySelector('.guesses')
+    const lastResult = document.querySelector('.lastResult')
+    const lowOrHi = document.querySelector('.lowOrHi')
+
+    const guessSubmit = document.querySelector('.guessSubmit')
+    const guessField = document.querySelector('.guessField')
+
+    let guessCount = 1
+    let resetButton
+
+    function checkGuess() {
+      let userGuess = Number(guessField.value)
+      if (guessCount === 1) {
+        guesses.textContent = 'Previous guesses: '
+      }
+      guesses.textContent += userGuess + ' '
+
+      if (userGuess === randomNumber) {
+        lastResult.textContent = 'Congratulations! You got it right!'
+        lastResult.style.backgroundColor = 'green'
+        lowOrHi.textContent = ''
+        setGameOver()
+      } else if (guessCount === 10) {
+        lastResult.textContent = '!!!GAME OVER!!!'
+        setGameOver()
+      } else {
+        lastResult.textContent = 'Wrong!'
+        lastResult.style.backgroundColor = 'red'
+        if (userGuess < randomNumber) {
+          lowOrHi.textContent = 'Last guess was too low!'
+        } else if (userGuess > randomNumber) {
+          lowOrHi.textContent = 'Last guess was too high!'
+        }
+      }
+
+      guessCount++
+      guessField.value = ''
+      guessField.focus()
+    }
+
+    guessSubmit.addEventListener('click', checkGuess)
+
+    function setGameOver() {
+      guessField.disabled = true
+      guessSubmit.disabled = true
+      resetButton = document.createElement('button')
+      resetButton.textContent = 'Start new game'
+      document.body.append(resetButton)
+      resetButton.addEventListener('click', resetGame)
+    }
+
+    function resetGame() {
+      guessCount = 1
+
+      const resetParas = document.querySelectorAll('.resultParas p')
+      for (let i = 0; i < resetParas.length; i++) {
+        resetParas[i].textContent = ''
+      }
+
+      resetButton.parentNode.removeChild(resetButton)
+
+      guessField.disabled = false
+      guessSubmit.disabled = false
+      guessField.value = ''
+      guessField.focus()
+
+      lastResult.style.backgroundColor = 'white'
+
+      randomNumber = Math.floor(Math.random() * 100) + 1
+    }
+
+    // Styling
+    guesses.style.backgroundColor = 'tan'
+    guesses.style.fontSize = '200%'
+    guesses.style.padding = '10px'
+    guesses.style.boxShadow = '3px 3px 6px black'
+  },
+}
 </script>
