@@ -1,0 +1,9 @@
+/* The pageTransition Property https://nuxtjs.org/docs/2.x/features/transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
