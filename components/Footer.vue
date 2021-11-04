@@ -1,16 +1,17 @@
 <style>
 .footer {
-  height: 100%;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 .footer-container {
+  height: auto;
   display: flex;
   justify-content: center;
-  gap: 1rem;
   margin: 3rem 0;
 }
 .svg-footer {
+  height: auto;
   margin: 1rem;
   transition: 0.5s ease;
   filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.25));

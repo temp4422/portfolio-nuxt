@@ -20,17 +20,16 @@ Rampart One, Kalam, Roboto
 *,
 *::before,
 *::after {
-  width: 100%; /* set on all elements, so unset on particular */
-  height: auto;
-  /* height: 100%; */
+  /* set on all elements, so unset on particular */
+  box-sizing: inherit;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
   padding: 0;
   border: 0;
   margin: 0;
-  box-sizing: inherit;
-  overflow-x: hidden;
 }
 html {
-  height: 100%;
   overflow: hidden;
 }
 body {
@@ -38,13 +37,12 @@ body {
   font-family: 'Kalam', 'Roboto', sans-serif;
   background: var(--black);
   color: var(--light-grey);
-  /* height: 100%; DON NOT CHANGE MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
+  height: auto; /*DON NOT CHANGE HEIGHT AND MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
   max-height: 100%;
   scroll-behavior: smooth;
 }
 .root {
   max-width: 768px;
-  height: 100%;
   display: grid;
   place-items: center;
   margin: 0 auto;
@@ -56,12 +54,10 @@ body {
 
 /****************************** MAIN ******************************/
 .main {
-  height: 100%;
   display: grid;
   place-items: center;
 }
 .section {
-  height: 100%;
   padding: 0 0 8rem 0;
   display: grid;
   place-items: center;
@@ -79,7 +75,11 @@ body {
   opacity: 0.5;
   z-index: 300;
 }
+.a {
+  display: inline-block;
+}
 .h1 {
+  display: inline-block;
   text-align: center;
   margin: 2rem 0;
 }
@@ -91,11 +91,10 @@ body {
 }
 
 .img {
-  margin: 0;
-  padding: 0;
   object-fit: contain;
   max-width: 100%;
   height: auto;
+  overflow: hidden;
 }
 .svg {
   cursor: pointer;

@@ -2,6 +2,7 @@
 /****************************** SECTIONS ******************************/
 /* SECTION-HOME */
 .section-home {
+  display: grid;
   padding-bottom: 20rem;
 }
 .typewriter-container {
@@ -18,31 +19,30 @@
 .section-works {
   display: grid;
 }
+.h1-works {
+  margin: 0;
+}
 .works-container {
   max-width: 30rem;
-  height: auto;
-  margin: 2rem 2rem;
+  /* margin: 2rem 0; */
   padding: 2rem;
   display: grid;
+  place-items: center;
   gap: 1rem;
   overflow: hidden;
 }
 .work-item {
   height: 12rem;
   margin: 4rem 0 0 0;
-  padding: 0;
   border-radius: 20px;
   overflow: hidden;
   filter: drop-shadow(0 0 1rem rgba(100, 100, 100, 0.25));
   /* filter: grayscale(1); */
 }
-.work-item__x-drive {
-  margin-top: 2rem;
+.work-item__div {
+  overflow: hidden;
 }
-.work-item__playground {
-  overflow-x: auto;
-  /* CURRENTLY BROKEN SHADOW!!!!!!!!! */
-}
+
 /* SECTION-ABOUT */
 .section-about {
   display: grid;
@@ -50,8 +50,7 @@
 .about-text {
   margin-bottom: 4rem;
 }
-.web-core {
-  height: 100%;
+.about-web {
   margin: 4rem;
   display: grid;
   grid-auto-flow: column;
@@ -59,8 +58,9 @@
   place-content: space-evenly;
   /* gap: 3rem; */
 }
-l.web-core__svg {
-  width: 4rem;
+.about-web__svg {
+  height: auto;
+  width: 3rem;
   /* padding: 1rem; */
   /* margin: 0 1rem; */
 }
@@ -91,32 +91,28 @@ l.web-core__svg {
 
     <!-- WORKS -->
     <section class="section section-works" id="works">
-      <div>
-        <div>
-          <h1 class="h1">MY WORKS</h1>
-        </div>
-      </div>
+      <h1 class="h1 h1-works">MY WORKS</h1>
       <div class="works-container">
-        <a href="https://www.x-drive.ua/">
-          <div class="work-item work-item__x-drive">
+        <a class="a work-item js-scroll slide-in-left" href="https://www.x-drive.ua/">
+          <div class="work-item__div work-item__x-drive">
             <img class="img" src="~/assets/img/jpg/x-drive.jpg" width="1280" height="720" alt="x-drive" />
           </div>
         </a>
         <p class="p-center js-scroll fade-in-bottom">X-drive.ua - smooth and fast with nuxt.js</p>
 
-        <a href="https://solomia-portfolio.netlify.app/">
-          <div class="work-item">
+        <a class="a work-item js-scroll slide-in-right" href="https://solomia-portfolio.netlify.app/">
+          <div class="work-item__div work-item__solomia">
             <img class="img" src="~/assets/img/jpg/solomia.jpg" width="1280" height="720" alt="solomia-portfolio" />
           </div>
         </a>
         <p class="p-center js-scroll fade-in-bottom">Artful portfolio</p>
 
-        <a href="./src/playground.html">
-          <div class="work-item work-item__playground">
+        <a class="a work-item js-scroll slide-in-left" href="./src/playground.html">
+          <div class="work-item__div work-item__playground">
             <img class="img playground-img" src="~/assets/img/jpg/playground.jpg" width="1280" height="720" alt="playground" />
           </div>
         </a>
-        <p class="p-center js-scroll fade-in-bottom">An interactive playground</p>
+        <p class="test2 p-center js-scroll fade-in-bottom" style="display: inline-block">An interactive playground</p>
       </div>
     </section>
 
@@ -125,8 +121,8 @@ l.web-core__svg {
       <h1 class="h1 h1-about">ABOUT</h1>
       <p class="p-center about-text">Building responsive mobile first websites.</p>
       <p class="p">You can't build what you can't imagine. The opposite is also true, with modern web technologies, you can make what ever you want.</p>
-      <div class="web-core">
-        <div class="svg web-core__svg js-scroll fade-in">
+      <div class="about-web">
+        <div class="svg about-web__svg js-scroll fade-in">
           <svg fill="none" height="100" width="87" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 141.532">
             <path d="M10.383 126.894 0 0l124 .255-10.979 126.639-50.553 14.638z" fill="#e34f26" />
             <path d="M62.468 129.277V12.085l51.064.17-9.106 104.851z" fill="#ef652a" />
@@ -136,7 +132,7 @@ l.web-core__svg {
             />
           </svg>
         </div>
-        <div class="svg web-core__svg js-scroll fade-in-delay-2">
+        <div class="svg about-web__svg js-scroll fade-in-delay-2">
           <svg fill="none" height="100" width="87" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 141.53">
             <path d="M10.383 126.892 0 0l124 .255-10.979 126.637-50.553 14.638z" fill="#1b73ba" />
             <path d="M62.468 129.275V12.085l51.064.17-9.106 104.85z" fill="#1c88c7" />
@@ -146,7 +142,7 @@ l.web-core__svg {
             />
           </svg>
         </div>
-        <div class="svg web-core__svg js-scroll fade-in-delay-3">
+        <div class="svg about-web__svg js-scroll fade-in-delay-3">
           <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">
             <path fill="#f7df1e" d="M0 0h630v630H0z" />
             <path

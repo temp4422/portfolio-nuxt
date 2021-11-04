@@ -6,12 +6,12 @@
   overflow-x: hidden;
 }
 .nav__panel {
+  /* height: 100vh; */
   position: fixed;
   top: 0;
   right: -100%;
   background: rgba(206, 206, 206, 0.507);
   transition: var(--transision-time-in) ease-out;
-  height: 100%;
   padding: 8rem 0 0 0;
   z-index: 200;
   backdrop-filter: blur(2px);
@@ -19,7 +19,7 @@
   grid-template: 1fr 5rem / 1fr;
   gap: var(--nav-links-gap);
   place-items: start center;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 .show-nav__panel {
   right: 0;
@@ -37,18 +37,22 @@
 }
 .nav__link {
   text-decoration: none;
+  min-height: 100%;
+  overflow: hidden;
 }
 .nav__svg {
   margin: 1rem;
-  width: 3rem;
-  height: 3rem;
+  min-width: 3rem;
+  min-height: 3rem;
+  overflow: hidden;
 }
 .sun-svg {
   width: 100%;
-  display: none;
+  /* display: none; */
 }
 .moon-svg {
-  display: none;
+  width: 100%;
+  /* display: none; */
 }
 
 /* Navigation menu button animation */
@@ -86,9 +90,10 @@
 }
 .nav__menu__line {
   height: 0.5rem;
-  /* background: var(--black); */
   background: #000;
   border-radius: 8px;
+  /* background: var(--black); */
+  /* border: 1px solid #fff; */
 }
 .nav__menu__line:nth-child(1) {
   transition: var(--transision-time-in);
@@ -156,7 +161,7 @@
       </button>
       <div class="nav__panel">
         <div class="nav__panel__top">
-          <a class="nav__link" href="#home">
+          <a class="a nav__link" href="#home">
             <div class="svg nav__svg home-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -167,7 +172,7 @@
               </svg>
             </div>
           </a>
-          <a class="nav__link" href="#works">
+          <a class="a nav__link" href="#works">
             <div class="svg nav__svg work-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -180,7 +185,7 @@
               </svg>
             </div>
           </a>
-          <a class="nav__link" href="#about">
+          <a class="a nav__link" href="#about">
             <div class="svg nav__svg about-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -191,7 +196,7 @@
               </svg>
             </div>
           </a>
-          <a class="nav__link" href="#contact">
+          <a class="a nav__link" href="#contact">
             <div class="svg nav__svg contact-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -201,7 +206,7 @@
               </svg>
             </div>
           </a>
-          <a class="nav__link" href="./src/playground.html">
+          <a class="a nav__link" href="./src/playground.html">
             <div class="svg nav__svg play-svg">
               <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
