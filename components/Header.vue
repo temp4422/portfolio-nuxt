@@ -329,12 +329,14 @@ export default {
 
     // Theme switcher
     const themeSwtichButtons = document.querySelectorAll('.js-theme-switcher')
+    const html = document.querySelector('html')
 
     themeSwtichButtons.forEach((item) => {
       item.addEventListener('click', themeSwitcher, false)
     })
 
     function themeSwitcher() {
+      html.classList.toggle('light-mode')
       themeSwtichButtons.forEach((item) => {
         item.classList.toggle('hide')
       })
