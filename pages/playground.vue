@@ -35,12 +35,11 @@
 }
 
 .guess-number__results {
-  width: 80%;
-  /* height: auto; */
+  min-width: 10rem;
+  width: 60%;
   margin: 2rem 0;
   display: grid;
   place-items: center;
-  /* height: rem; */
 }
 .guess-number__results__guesses {
   min-height: 2rem;
@@ -122,12 +121,15 @@ export default {
         guesses.textContent = 'Previous guesses: '
       }
       guesses.textContent += userGuess + ' '
-
+      console.log(userGuess)
       if (userGuess === randomNumber) {
         lastResult.textContent = 'Congratulations! You got it right!'
         lastResult.style.backgroundColor = 'green'
         lowOrHi.textContent = ''
         setGameOver()
+      } else if (userGuess === 999) {
+        lastResult.textContent = '!!! CONGRATULATIONS! YOU GOT THE SECRET! !!!'
+        lastResult.style.backgroundColor = 'orange'
       } else if (guessCount === 10) {
         lastResult.textContent = '!!!GAME OVER!!!'
         setGameOver()
@@ -139,9 +141,6 @@ export default {
         } else if (userGuess > randomNumber) {
           lowOrHi.textContent = 'Last guess was too high!'
         }
-        // else if (userGuess == 'secret') {
-        //   lastResult.textContent = '!!! CONGRATULATIONS! YOU GOT THE SECRET! !!!'
-        // }
       }
 
       guessCount++
