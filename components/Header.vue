@@ -1,9 +1,14 @@
 <style>
+:root {
+  --nav__panel--grey: rgba(206, 206, 206, 0.507);
+  --nav__svg--light: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+  --nav__svg--light-hover: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgb(255, 255, 255, 1));
+}
 .nav__panel {
   position: fixed;
   top: 0;
   right: -100%;
-  background: rgba(206, 206, 206, 0.507);
+  background: var(--nav__panel--grey);
   transition: var(--transision-time-in) ease-out;
   padding: 8rem 0 0 0;
   z-index: 200;
@@ -52,10 +57,10 @@
   overflow: hidden;
 }
 .nav__svg--light {
-  filter: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+  filter: var(--nav__svg--light);
 }
 .nav__svg--light:hover {
-  filter: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgb(255, 255, 255, 1));
+  filter: var(--nav__svg--light-hover);
 }
 .language-svg {
   justify-self: start;
@@ -121,11 +126,11 @@
   z-index: 300;
   cursor: pointer;
   transition: 0.5s ease; /* box shadow animation on hover*/
-  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
+  filter: var(--shadow-big);
 }
 .nav__menu:hover {
   transition: 0.5s ease;
-  filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
+  filter: var(--shadow-hover);
 }
 @media (min-width: 768px) {
   .nav__panel {
@@ -136,7 +141,7 @@
 .nav__menu__line {
   height: 0.5rem;
   background: #000;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   /* background: var(--black); */
   /* border: 1px solid #fff; */
 }

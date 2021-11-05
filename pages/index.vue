@@ -37,7 +37,7 @@
   margin: 4rem 0 0 0;
   border-radius: 20px;
   overflow: hidden;
-  filter: drop-shadow(0 0 1rem rgba(100, 100, 100, 0.25));
+  filter: var(--shadow-main-item);
 }
 .work-item__div {
   overflow: hidden;
@@ -64,7 +64,7 @@
 .jamstack-logo {
   height: auto;
   margin: 4rem 0 0 0;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 </style>
 

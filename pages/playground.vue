@@ -1,5 +1,5 @@
 <style scoped>
-* {
+/* * {
   border-radius: 8px;
 }
 .object-3d {
@@ -13,7 +13,6 @@
   place-items: center;
 }
 .guess-number__form {
-  /* height: auto; */
   display: grid;
   place-items: center;
 }
@@ -59,7 +58,7 @@
 }
 .p-easter:hover {
   opacity: 1;
-}
+} */
 </style>
 
 <template>
@@ -69,10 +68,28 @@
 
     <hr class="hr" />
 
-    <section class="section section-guess-number">
+    <!-- <section class="section section-guess-number">
       <h1 class="h1">GUESS NUMBER 1.0</h1>
       <p class="p">Guess a random number between 1 and 100. Can you ?</p>
       <div class="form guess-number__form">
+        <label class="guess-number__form__label" for="guessField">Enter a guess: </label>
+        <input class="guessField guess-number__form__input" type="text" id="guessField" />
+        <input class="guessSubmit guess-number__form__submit" type="submit" value="Guess!" />
+      </div>
+
+      <div class="resultParas guess-number__results">
+        <p class="guesses guess-number__results__guesses"></p>
+        <p class="lastResult guess-number__results__last-result"></p>
+        <p class="lowOrHi guess-number__results__low-or-hi"></p>
+      </div>
+
+      <p class="p p-easter" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')">Did you find easter ?</p>
+    </section> -->
+
+    <section class="section section-guess-number">
+      <h1 class="h1 text-center m-4 text-green-500">GUESS NUMBER 1.0</h1>
+      <p class="p">Guess a random number between 1 and 100. Can you ?</p>
+      <div class="form guess-number__form h-auto">
         <label class="guess-number__form__label" for="guessField">Enter a guess: </label>
         <input class="guessField guess-number__form__input" type="text" id="guessField" />
         <input class="guessSubmit guess-number__form__submit" type="submit" value="Guess!" />

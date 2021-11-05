@@ -16,6 +16,17 @@ Rampart One, Kalam, Roboto
   --transision-time-out: 1.5s;
   --transision-time-in: 0.5s;
   --nav-links-gap: 1rem;
+  --border-radius: 8px;
+  --shadow: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+  --shadow-big: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
+  --shadow-hover: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
+
+  --shadow-main-item: drop-shadow(0 0 1rem rgba(100, 100, 100, 0.25));
+
+  --svg-footer: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.25));
+  --svg-footer-light: invert(100%) sepia(0%) saturate(7500%) hue-rotate(246deg) brightness(107%) contrast(102%)
+    drop-shadow(0 0 0.5rem rgba(129, 129, 129, 0.815));
+  --svg-footer-light-hover: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.25rem rgb(255, 255, 255));
 }
 *,
 *::before,
@@ -77,7 +88,7 @@ body {
   height: 0.1rem;
   background: var(--light-grey);
   border: 1px solid var(--light-grey);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   opacity: 0.5;
   z-index: 300;
 }
@@ -105,11 +116,11 @@ body {
 .svg {
   cursor: pointer;
   transition: 0.5s ease;
-  filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+  filter: var(--shadow);
 }
 .svg:hover {
   transition: 0.25s ease;
-  filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
+  filter: var(--shadow-hover);
 }
 
 /****************************** Animation ******************************/
