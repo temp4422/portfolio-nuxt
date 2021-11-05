@@ -40,6 +40,12 @@ body {
   height: auto; /*DON NOT CHANGE HEIGHT AND MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
   max-height: 100%;
   scroll-behavior: smooth;
+  transition: 1s ease; /* Apply theme */
+}
+.light-theme {
+  transition: 1s ease;
+  background: var(--light-grey);
+  color: var(--black);
 }
 .root {
   max-width: 768px;
@@ -50,6 +56,12 @@ body {
 }
 .lock-scroll {
   overflow: hidden;
+}
+.hide {
+  transition: 1s ease;
+  transform: translateX(100%);
+  opacity: 0 !important;
+  grid-column-end: auto !important;
 }
 /****************************** MAIN ******************************/
 .main {

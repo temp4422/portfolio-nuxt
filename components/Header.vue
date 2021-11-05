@@ -44,13 +44,14 @@
   place-content: center;
   overflow: hidden;
 }
-.sun-svg {
-  width: 100%;
-  display: none;
-}
 .moon-svg {
-  width: 100%;
-  /* display: none; */
+  transition: 1s ease;
+  grid-column-end: 4;
+  /* grid-column-end: auto; */
+}
+.sun-svg {
+  transition: 1s ease;
+  transform: translateX(-100%);
 }
 
 /* Navigation menu button animation */
@@ -157,7 +158,7 @@
         <div class="nav__menu__line"></div>
         <div class="nav__menu__line"></div>
       </button>
-      <div class="nav__panel">
+      <div class="nav__panel show-nav__panel">
         <div class="nav__panel__top">
           <!-- <NuxtLink to="/#home" class=""
             ><div class="svg nav__svg home-svg">
@@ -237,15 +238,7 @@
               />
             </svg>
           </div>
-          <div class="svg nav__link nav__svg sun-svg">
-            <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z"
-                fill="#202020"
-              />
-            </svg>
-          </div>
-          <div class="svg nav__link nav__svg moon-svg">
+          <div class="svg nav__svg moon-svg js-theme-switcher">
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M21 3C13.5 3 4.5 10.5 4.5 22.5s9 21 21 21S45 34.5 45 27C28.5 37.5 10.5 19.5 21 3Z"
@@ -253,6 +246,14 @@
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="svg nav__svg sun-svg js-theme-switcher hide">
+            <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z"
+                fill="#202020"
               />
             </svg>
           </div>
@@ -270,6 +271,20 @@ export default {
     const navLinks = document.querySelector('.nav__panel')
     const linkArr = document.querySelectorAll('.nav__link')
     const body = document.querySelector('body')
+
+    // Theme switcher
+    const themeSwtichButtons = document.querySelectorAll('.js-theme-switcher')
+
+    themeSwtichButtons.forEach((item) => {
+      item.addEventListener('click', themeSwitcher, false)
+    })
+
+    function themeSwitcher() {
+      body.classList.toggle('light-theme')
+      themeSwtichButtons.forEach((item) => {
+        item.classList.toggle('hide')
+      })
+    }
 
     function showMenu() {
       menu.classList.toggle('show-nav__menu')
