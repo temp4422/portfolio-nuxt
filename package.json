@@ -13,6 +13,7 @@
     "nuxt-edge": "latest"
   },
   "devDependencies": {
-    "@nuxt/bridge": "npm:@nuxt/bridge-edge"
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge",
+    "nuxt-windicss": "^2.0.11"
   }
 }

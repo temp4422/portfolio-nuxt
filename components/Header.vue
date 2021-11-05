@@ -110,7 +110,7 @@
   gap: 0.5rem;
   width: 4rem;
   height: 4.1rem;
-  /* background: rgba(186, 186, 186, 0.377); */
+  background: rgba(186, 186, 186, 0.377);
   margin: 2rem;
   padding: 0.5rem;
   border-radius: 25%;

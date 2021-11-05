@@ -27,7 +27,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: ['nuxt-windicss'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
