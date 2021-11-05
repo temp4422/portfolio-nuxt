@@ -28,10 +28,12 @@
 .nav__panel__bottom {
   height: auto;
   display: grid;
+  grid-template: 1fr / 1fr;
   grid-auto-flow: column;
   justify-content: space-between;
   place-items: center;
   overflow: hidden;
+  padding: 1rem;
 }
 .nav__link {
   text-decoration: none;
@@ -44,14 +46,47 @@
   place-content: center;
   overflow: hidden;
 }
+.language-svg {
+  justify-self: start;
+  align-self: start;
+  width: 3rem;
+}
 .moon-svg {
-  transition: 1s ease;
   grid-column-end: 4;
-  /* grid-column-end: auto; */
+  animation: unhide 1s ease both;
+  transform: translateX(100%);
 }
 .sun-svg {
+  transform: translateX(100%);
+  animation: unhide 1s ease both;
+}
+/* Theme switch button animation */
+@keyframes unhide {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.hide {
   transition: 1s ease;
-  transform: translateX(-100%);
+  grid-column-end: auto !important;
+  animation: hide 1s ease both;
+  opacity: 0 !important;
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 }
 
 /* Navigation menu button animation */
@@ -158,7 +193,7 @@
         <div class="nav__menu__line"></div>
         <div class="nav__menu__line"></div>
       </button>
-      <div class="nav__panel show-nav__panel">
+      <div class="nav__panel">
         <div class="nav__panel__top">
           <!-- <NuxtLink to="/#home" class=""
             ><div class="svg nav__svg home-svg">
@@ -229,7 +264,7 @@
         </div>
 
         <div class="nav__panel__bottom">
-          <div class="svg nav__link nav__svg language-svg">
+          <div class="svg nav__svg language-svg">
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M4 16h40M24 46c12.15 0 22-9.85 22-22S36.15 2 24 2 2 11.85 2 24s9.85 22 22 22Zm0 0c6 0 8-10 8-22S30 2 24 2s-8 10-8 22 2 22 8 22ZM4 32h40H4Z"

@@ -57,12 +57,6 @@ body {
 .lock-scroll {
   overflow: hidden;
 }
-.hide {
-  transition: 1s ease;
-  transform: translateX(100%);
-  opacity: 0 !important;
-  grid-column-end: auto !important;
-}
 /****************************** MAIN ******************************/
 .main {
   display: grid;
