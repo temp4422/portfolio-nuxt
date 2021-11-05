@@ -1,33 +1,5 @@
 <style>
-/*
-// COLORS
-Main color - Mine Shaft (approx.) #202020
-// FONTS
-Rampart One, Kalam, Roboto
-*/
 
-/****************************** GENERAL ******************************/
-@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Rampart+One&family=Roboto&family=Satisfy&display=swap');
-
-:root {
-  --black: #202020;
-  --light-grey: #cecece;
-  --dark-grey: #bababa;
-  --transision-time-out: 1.5s;
-  --transision-time-in: 0.5s;
-  --nav-links-gap: 1rem;
-  --border-radius: 8px;
-  --shadow: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
-  --shadow-big: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
-  --shadow-hover: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
-
-  --shadow-main-item: drop-shadow(0 0 1rem rgba(100, 100, 100, 0.25));
-
-  --svg-footer: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.25));
-  --svg-footer-light: invert(100%) sepia(0%) saturate(7500%) hue-rotate(246deg) brightness(107%) contrast(102%)
-    drop-shadow(0 0 0.5rem rgba(129, 129, 129, 0.815));
-  --svg-footer-light-hover: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.25rem rgb(255, 255, 255));
-}
 *,
 *::before,
 *::after {
@@ -46,17 +18,12 @@ html {
 body {
   box-sizing: border-box;
   font-family: 'Kalam', 'Roboto', sans-serif;
-  background: var(--black);
-  color: var(--light-grey);
+  background: var(--bg);
+  color: var(--color);
   height: auto; /*DON NOT CHANGE HEIGHT AND MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
   max-height: 100%;
   scroll-behavior: smooth;
   transition: 1s ease; /* Apply theme */
-}
-.light-theme {
-  transition: 1s ease;
-  background: var(--light-grey);
-  color: var(--black);
 }
 .root {
   max-width: 768px;
@@ -86,8 +53,8 @@ body {
   margin: 10rem 0;
   width: 80%;
   height: 0.1rem;
-  background: var(--light-grey);
-  border: 1px solid var(--light-grey);
+  background: var(--color);
+  border: 1px solid var(--color);
   border-radius: var(--border-radius);
   opacity: 0.5;
   z-index: 300;
@@ -99,12 +66,15 @@ body {
   display: inline-block;
   text-align: center;
   margin: 2rem 0;
+  overflow: hidden;
 }
 .p {
   margin: 2rem 0;
+  overflow: hidden;
 }
 .p-center {
   text-align: center;
+  overflow: hidden;
 }
 
 .img {

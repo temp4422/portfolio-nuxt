@@ -16,13 +16,8 @@
   transition: 0.5s ease;
   filter: var(--svg-footer);
 }
-.svg-footer--light {
-  transition: 0.5s ease;
-  filter: var(--svg-footer-light);
-}
-.svg-footer--light:hover {
-  transition: 0.5s ease;
-  filter: var(--svg-footer-light-hover);
+.svg-footer:hover {
+  filter: var(--svg-footer-hover);
 }
 </style>
 

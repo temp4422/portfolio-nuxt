@@ -1,9 +1,73 @@
+/*
+// COLORS
+Main color - Mine Shaft (approx.) #202020
+// FONTS
+Rampart One, Kalam, Roboto
+*/
+
+/****************************** GENERAL ******************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Rampart+One&family=Roboto&family=Satisfy&display=swap');
+
 /* The pageTransition Property https://nuxtjs.org/docs/2.x/features/transitions */
 .page-enter-active,
-.page-leave-active {
+xxxxx.page-leave-active {
   transition: opacity 0.5s;
 }
 .page-enter,
 .page-leave-to {
   opacity: 0;
+}
+
+/* @nuxtjs/color-mode */
+:root {
+  /* General */
+  --bg: #202020;
+  --color: #cecece;
+  --color-second: #bababa;
+  --transision-time-out: 1.5s;
+  --transision-time-in: 0.5s;
+  --nav-links-gap: 1rem;
+  --border-radius: 8px;
+  --shadow: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+  --shadow-big: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
+  --shadow-hover: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
+
+  /* Header */
+  --nav__panel: rgba(206, 206, 206, 0.507);
+  --nav__svg: none;
+  --nav__svg-hover: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
+
+  /* Main */
+  --shadow-main-item: drop-shadow(0 0 1rem rgba(100, 100, 100, 0.25));
+
+  /* Footer */
+  --svg-footer: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.25));
+  --svg-footer-hover: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
+}
+
+.light-mode {
+  /* General */
+  --bg: #cecece;
+  --color: #202020;
+  --color-second: #bababa;
+  --transision-time-out: 1.5s;
+  --transision-time-in: 0.5s;
+  --nav-links-gap: 1rem;
+  --border-radius: 8px;
+  --shadow: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+  --shadow-big: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
+  --shadow-hover: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
+
+  /* Header */
+  --nav__panel: rgba(0, 0, 0, 0.836);
+  --nav__svg: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+  --nav__svg-hover: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgb(255, 255, 255, 1));
+
+  /* Main */
+  --shadow-main-item: drop-shadow(0 0 1rem rgba(100, 100, 100, 0.25));
+
+  /* Footer */
+  --svg-footer: invert(100%) sepia(0%) saturate(7500%) hue-rotate(246deg) brightness(107%) contrast(102%) drop-shadow(0 0 0.5rem rgba(129, 129, 129, 0.815));
+  --svg-footer-hover: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.25rem rgb(255, 255, 255));
 }

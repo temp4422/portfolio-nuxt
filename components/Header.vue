@@ -1,14 +1,9 @@
 <style>
-:root {
-  --nav__panel--grey: rgba(206, 206, 206, 0.507);
-  --nav__svg--light: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
-  --nav__svg--light-hover: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgb(255, 255, 255, 1));
-}
 .nav__panel {
   position: fixed;
   top: 0;
   right: -100%;
-  background: var(--nav__panel--grey);
+  background: var(--nav__panel);
   transition: var(--transision-time-in) ease-out;
   padding: 8rem 0 0 0;
   z-index: 200;
@@ -18,10 +13,6 @@
   gap: var(--nav-links-gap);
   place-items: start center;
   overflow-y: auto;
-  transition: 1s ease;
-}
-.nav__panel--light {
-  background: rgba(0, 0, 0, 0.836);
   transition: 1s ease;
 }
 .show-nav__panel {
@@ -55,12 +46,10 @@
   place-items: center;
   place-content: center;
   overflow: hidden;
+  filter: var(--nav__svg);
 }
-.nav__svg--light {
-  filter: var(--nav__svg--light);
-}
-.nav__svg--light:hover {
-  filter: var(--nav__svg--light-hover);
+.nav__svg-hover {
+  filter: var(--nav__svg-hover);
 }
 .language-svg {
   justify-self: start;
@@ -142,7 +131,7 @@
   height: 0.5rem;
   background: #000;
   border-radius: var(--border-radius);
-  /* background: var(--black); */
+  /* background: var(--bg); */
   /* border: 1px solid #fff; */
 }
 .nav__menu__line:nth-child(1) {
@@ -340,29 +329,14 @@ export default {
 
     // Theme switcher
     const themeSwtichButtons = document.querySelectorAll('.js-theme-switcher')
-    const navMenu = document.querySelector('.nav__panel')
-    const navSVGs = document.querySelectorAll('.nav__svg')
-    // Footer
-    const footerSVGs = document.querySelectorAll('.svg-footer')
 
     themeSwtichButtons.forEach((item) => {
       item.addEventListener('click', themeSwitcher, false)
     })
 
     function themeSwitcher() {
-      body.classList.toggle('light-theme')
-      navMenu.classList.toggle('nav__panel--light')
-
-      navSVGs.forEach((item) => {
-        item.classList.toggle('nav__svg--light')
-      })
-
       themeSwtichButtons.forEach((item) => {
         item.classList.toggle('hide')
-      })
-      // Footer
-      footerSVGs.forEach((item) => {
-        item.classList.toggle('svg-footer--light')
       })
     }
   },
