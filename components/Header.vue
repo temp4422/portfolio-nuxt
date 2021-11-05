@@ -13,6 +13,11 @@
   gap: var(--nav-links-gap);
   place-items: start center;
   overflow-y: auto;
+  transition: 1s ease;
+}
+.nav__panel--light {
+  background: rgba(0, 0, 0, 0.836);
+  transition: 1s ease;
 }
 .show-nav__panel {
   right: 0;
@@ -45,6 +50,12 @@
   place-items: center;
   place-content: center;
   overflow: hidden;
+}
+.nav__svg--light {
+  filter: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+}
+.nav__svg--light:hover {
+  filter: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgb(255, 255, 255, 1));
 }
 .language-svg {
   justify-self: start;
@@ -99,7 +110,7 @@
   gap: 0.5rem;
   width: 4rem;
   height: 4.1rem;
-  background: rgba(186, 186, 186, 0.377);
+  /* background: rgba(186, 186, 186, 0.377); */
   margin: 2rem;
   padding: 0.5rem;
   border-radius: 25%;
@@ -307,20 +318,6 @@ export default {
     const linkArr = document.querySelectorAll('.nav__link')
     const body = document.querySelector('body')
 
-    // Theme switcher
-    const themeSwtichButtons = document.querySelectorAll('.js-theme-switcher')
-
-    themeSwtichButtons.forEach((item) => {
-      item.addEventListener('click', themeSwitcher, false)
-    })
-
-    function themeSwitcher() {
-      body.classList.toggle('light-theme')
-      themeSwtichButtons.forEach((item) => {
-        item.classList.toggle('hide')
-      })
-    }
-
     function showMenu() {
       menu.classList.toggle('show-nav__menu')
       navLinks.classList.toggle('show-nav__panel')
@@ -335,6 +332,34 @@ export default {
     linkArr.forEach((item) => {
       item.addEventListener('click', showMenu, false)
     })
+
+    // Theme switcher
+    const themeSwtichButtons = document.querySelectorAll('.js-theme-switcher')
+    const navMenu = document.querySelector('.nav__panel')
+    const navSVGs = document.querySelectorAll('.nav__svg')
+    // Footer
+    const footerSVGs = document.querySelectorAll('.svg-footer')
+
+    themeSwtichButtons.forEach((item) => {
+      item.addEventListener('click', themeSwitcher, false)
+    })
+
+    function themeSwitcher() {
+      body.classList.toggle('light-theme')
+      navMenu.classList.toggle('nav__panel--light')
+
+      navSVGs.forEach((item) => {
+        item.classList.toggle('nav__svg--light')
+      })
+
+      themeSwtichButtons.forEach((item) => {
+        item.classList.toggle('hide')
+      })
+      // Footer
+      footerSVGs.forEach((item) => {
+        item.classList.toggle('svg-footer--light')
+      })
+    }
   },
 }
 </script>

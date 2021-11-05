@@ -38,7 +38,6 @@
   border-radius: 20px;
   overflow: hidden;
   filter: drop-shadow(0 0 1rem rgba(100, 100, 100, 0.25));
-  /* filter: grayscale(1); */
 }
 .work-item__div {
   overflow: hidden;
@@ -105,7 +104,7 @@
         </a>
         <p class="p-center js-scroll fade-in-bottom">Artful portfolio</p>
 
-        <a class="a work-item js-scroll slide-in-left" href="./src/playground.html">
+        <a class="a work-item js-scroll slide-in-left" href="/playground">
           <div class="work-item__div work-item__playground">
             <img class="img playground-img" src="~/assets/img/jpg/playground.jpg" width="1280" height="720" alt="playground" />
           </div>

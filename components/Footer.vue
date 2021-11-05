@@ -16,6 +16,14 @@
   transition: 0.5s ease;
   filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.25));
 }
+.svg-footer--light {
+  transition: 0.5s ease;
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(246deg) brightness(107%) contrast(102%) drop-shadow(0 0 0.5rem rgba(129, 129, 129, 0.815));
+}
+.svg-footer--light:hover {
+  transition: 0.5s ease;
+  filter: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.25rem rgb(255, 255, 255));
+}
 </style>
 
 <template>
