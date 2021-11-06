@@ -113,7 +113,7 @@
   border: none;
   z-index: 300;
   cursor: pointer;
-  transition:var(--transition-main-out); /* box shadow animation on hover*/
+  transition: var(--transition-main-out); /* box shadow animation on hover*/
   filter: var(--shadow-big);
 }
 .nav__menu:hover {
@@ -197,7 +197,7 @@
         <div class="nav__menu__line"></div>
         <div class="nav__menu__line"></div>
       </button>
-      <div class="nav__panel show-nav__panel">
+      <div class="nav__panel">
         <div class="nav__panel__top">
           <NuxtLink class="a nav__link" to="/#home" @click.native="scrollTo('#home')"
             ><div class="svg nav__svg home-svg">

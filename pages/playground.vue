@@ -64,7 +64,7 @@
 <template>
   <main class="main">
     <h1 class="h1">PLAYGROUND</h1>
-    <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls> </model-viewer>
+    <!-- <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls> </model-viewer> -->
 
     <hr class="hr" />
 
@@ -87,7 +87,7 @@
     </section> -->
 
     <section class="section section-guess-number">
-      <h1 class="h1 text-center m-4 text-green-500">GUESS NUMBER 1.0</h1>
+      <h1 class="h1 text-xl m-4 text-green-500" style="">GUESS NUMBER 1.0</h1>
       <p class="p">Guess a random number between 1 and 100. Can you ?</p>
       <div class="form guess-number__form h-auto">
         <label class="guess-number__form__label" for="guessField">Enter a guess: </label>
@@ -103,16 +103,8 @@
 
       <p class="p p-easter" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')">Did you find easter ?</p>
     </section>
-    <!-- <a
-      frameborder="0"
-      data-theme="dark"
-      data-layers="1,2,3,4"
-      data-stack-embed="true"
-      href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"
-    ></a>
-    <script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script> -->
 
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
   </main>
 </template>
 
