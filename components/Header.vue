@@ -198,9 +198,9 @@
         <div class="nav__menu__line"></div>
         <div class="nav__menu__line"></div>
       </button>
-      <div class="nav__panel">
+      <div class="nav__panel show-nav__panel">
         <div class="nav__panel__top">
-          <NuxtLink to="/#home" class=""
+          <NuxtLink class="a nav__link" to="/#home" @click.native="scrollTo('#home')"
             ><div class="svg nav__svg home-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -222,7 +222,7 @@
               </svg>
             </div>
           </a> -->
-          <a class="a nav__link" href="/#works">
+          <NuxtLink class="a nav__link" to="/#works" @click.native="scrollTo('#works')">
             <div class="svg nav__svg work-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -234,8 +234,8 @@
                 />
               </svg>
             </div>
-          </a>
-          <a class="a nav__link" href="/#about">
+          </NuxtLink>
+          <NuxtLink class="a nav__link" to="/#about" @click.native="scrollTo('#about')">
             <div class="svg nav__svg about-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -245,8 +245,8 @@
                 />
               </svg>
             </div>
-          </a>
-          <a class="a nav__link" href="/#contact">
+          </NuxtLink>
+          <NuxtLink class="a nav__link" to="/#contact" @click.native="scrollTo('#contact')">
             <div class="svg nav__svg contact-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -255,8 +255,8 @@
                 />
               </svg>
             </div>
-          </a>
-          <a class="a nav__link" href="/playground">
+          </NuxtLink>
+          <NuxtLink class="a nav__link" to="/playground">
             <div class="svg nav__svg play-svg">
               <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -265,7 +265,7 @@
                 />
               </svg>
             </div>
-          </a>
+          </NuxtLink>
         </div>
 
         <div class="nav__panel__bottom">
@@ -341,6 +341,18 @@ export default {
         item.classList.toggle('hide')
       })
     }
+
+    // Scroll to page's anchors
+    if (this.$route.hash) {
+      setTimeout(() => this.scrollTo(this.$route.hash), 1)
+    }
+  },
+  methods: {
+    scrollTo: function (hashtag) {
+      setTimeout(() => {
+        location.to = hashtag
+      }, 1)
+    },
   },
 }
 </script>
