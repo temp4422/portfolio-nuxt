@@ -53,19 +53,28 @@
 }
 .language-svg {
   justify-self: start;
-  align-self: start;
   width: 3rem;
 }
 .moon-svg {
-  grid-column-end: 4;
   animation: unhide 1s ease both;
-  transform: translateX(100%);
 }
 .sun-svg {
   transform: translateX(100%);
   animation: unhide 1s ease both;
 }
+.hide {
+  animation: hide 1s ease both;
+}
 /* Theme switch button animation */
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+}
 @keyframes unhide {
   0% {
     opacity: 0;
@@ -75,21 +84,6 @@
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
-  }
-}
-.hide {
-  grid-column-end: auto !important;
-  animation: hide 1s ease both;
-  opacity: 0 !important;
-}
-@keyframes hide {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(100%);
   }
 }
 
@@ -265,6 +259,16 @@
               />
             </svg>
           </div>
+
+          <div class="svg nav__svg sun-svg js-theme-switcher hide">
+            <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z"
+                fill="#202020"
+              />
+            </svg>
+          </div>
+
           <div class="svg nav__svg moon-svg js-theme-switcher">
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -273,14 +277,6 @@
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-              />
-            </svg>
-          </div>
-          <div class="svg nav__svg sun-svg js-theme-switcher hide">
-            <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z"
-                fill="#202020"
               />
             </svg>
           </div>

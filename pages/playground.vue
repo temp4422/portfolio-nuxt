@@ -63,10 +63,8 @@
 
 <template>
   <main class="main">
-    <h1 class="h1">PLAYGROUND</h1>
+    <h1 class="content-center text-center text-4xl m-5 p-10">PLAYGROUND</h1>
     <!-- <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls> </model-viewer> -->
-
-    <hr class="hr" />
 
     <!-- <section class="section section-guess-number">
       <h1 class="h1">GUESS NUMBER 1.0</h1>
@@ -87,21 +85,21 @@
     </section> -->
 
     <section class="section section-guess-number">
-      <h1 class="h1 text-xl m-4 text-green-500" style="">GUESS NUMBER 1.0</h1>
-      <p class="p">Guess a random number between 1 and 100. Can you ?</p>
-      <div class="form guess-number__form h-auto">
+      <h1 class="text-center text-3xl m-10 text-green-500" style="">GUESS NUMBER GAME 1.0</h1>
+      <p class="text-center m-4">Guess a random number between 1 and 100. Can you ?</p>
+      <div class="form guess-number__form m-10 grid gap-2 justify-center justify-items-center">
         <label class="guess-number__form__label" for="guessField">Enter a guess: </label>
-        <input class="guessField guess-number__form__input" type="text" id="guessField" />
-        <input class="guessSubmit guess-number__form__submit" type="submit" value="Guess!" />
+        <input class="guessField guess-number__form__input max-w-30rem bg-bg-gray-500 rounded-xl" type="text" id="guessField" />
+        <input class="guessSubmit guess-number__form__submit bg-bg-gray-700 text-green-800 text-shadow-lg text-2xl rounded-xl" type="submit" value="Guess!" />
       </div>
 
-      <div class="resultParas guess-number__results">
+      <div class="resultParas guess-number__results grid m-10">
         <p class="guesses guess-number__results__guesses"></p>
         <p class="lastResult guess-number__results__last-result"></p>
         <p class="lowOrHi guess-number__results__low-or-hi"></p>
       </div>
 
-      <p class="p p-easter" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')">Did you find easter ?</p>
+      <p class="text-center" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')">Did you find easter ?</p>
     </section>
 
     <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->

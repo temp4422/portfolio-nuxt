@@ -65,7 +65,7 @@ xxxxx.page-leave-active {
 
   /* Header */
   --nav__panel: rgba(0, 0, 0, 0.836);
-  --nav__svg: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+  --nav__svg: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.25));
   --nav__svg-hover: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.5rem rgb(255, 255, 255, 1));
 
   /* Main */
