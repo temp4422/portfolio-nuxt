@@ -23,7 +23,7 @@ body {
   height: auto; /*DON NOT CHANGE HEIGHT AND MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
   max-height: 100%;
   scroll-behavior: smooth;
-  transition: 1s ease; /* Apply theme */
+  transition: var(--transition-main-out);; /* Apply theme */
 }
 .root {
   max-width: 768px;
@@ -85,11 +85,11 @@ body {
 }
 .svg {
   cursor: pointer;
-  transition: 0.5s ease;
+  transition: var(--transition-main-out);;
   filter: var(--shadow);
 }
 .svg:hover {
-  transition: 0.25s ease;
+  transition: var(--transition-main-in);;
   filter: var(--shadow-hover);
 }
 

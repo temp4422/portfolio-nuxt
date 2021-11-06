@@ -79,7 +79,6 @@
   }
 }
 .hide {
-  transition: 1s ease;
   grid-column-end: auto !important;
   animation: hide 1s ease both;
   opacity: 0 !important;
@@ -114,11 +113,11 @@
   border: none;
   z-index: 300;
   cursor: pointer;
-  transition: 0.5s ease; /* box shadow animation on hover*/
+  transition:var(--transition-main-out); /* box shadow animation on hover*/
   filter: var(--shadow-big);
 }
 .nav__menu:hover {
-  transition: 0.5s ease;
+  transition: var(--transition-main-in);
   filter: var(--shadow-hover);
 }
 @media (min-width: 768px) {

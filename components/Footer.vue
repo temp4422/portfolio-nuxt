@@ -13,10 +13,11 @@
 .svg-footer {
   height: auto;
   margin: 1rem;
-  transition: 0.5s ease;
+  transition: var(--transition-main-out);
   filter: var(--svg-footer);
 }
 .svg-footer:hover {
+  transition: var(--transition-main-in);
   filter: var(--svg-footer-hover);
 }
 </style>
