@@ -200,7 +200,7 @@
       </button>
       <div class="nav__panel">
         <div class="nav__panel__top">
-          <!-- <NuxtLink to="/#home" class=""
+          <NuxtLink to="/#home" class=""
             ><div class="svg nav__svg home-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -209,9 +209,9 @@
                   fill="#202020"
                 />
               </svg></div
-          ></NuxtLink> -->
+          ></NuxtLink>
 
-          <a class="a nav__link" href="/#home">
+          <!-- <a class="a nav__link" href="/#home">
             <div class="svg nav__svg home-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -221,7 +221,7 @@
                 />
               </svg>
             </div>
-          </a>
+          </a> -->
           <a class="a nav__link" href="/#works">
             <div class="svg nav__svg work-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
