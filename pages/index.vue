@@ -62,20 +62,20 @@
   width: 3rem;
 }
 .jamstack-logo {
+  transition: var(--transition-main-out);
+  filter: var(--jamstack-logo);
   height: auto;
   margin: 4rem 0 0 0;
   border-radius: var(--border-radius);
+}
+.jamstack-logo:hover {
+  transition: var(--transition-main-in);
+  filter: var(--jamstack-logo-hover);
 }
 </style>
 
 <template>
   <main class="main">
-    <div style="background: grey; width: 20rem; height: 20rem">
-      <svg viewBox="0 0 100 100" class="">
-        <use xlink:href="~/assets/sprite.svg#bi_sun"></use>
-      </svg>
-    </div>
-
     <!-- HOME -->
     <section class="section section-home" id="home">
       <div class="typewriter-container">

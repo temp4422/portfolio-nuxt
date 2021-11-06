@@ -4,7 +4,7 @@
   top: 0;
   right: -100%;
   background: var(--nav__panel);
-  transition: var(--transision-time-in) ease-out;
+  transition: var(--nav-transition-time-in) ease-out;
   padding: 8rem 0 0 0;
   z-index: 200;
   backdrop-filter: blur(2px);
@@ -17,7 +17,7 @@
 }
 .show-nav__panel {
   right: 0;
-  transition: calc(var(--transision-time-out) / 1.5) ease;
+  transition: calc(var(--nav-transition-time-out) / 1.5) ease;
 }
 .nav__panel__top {
   height: auto;
@@ -108,7 +108,7 @@
   margin: 2rem;
   padding: 0.5rem;
   border-radius: 25%;
-  animation: menu-spin-back var(--transision-time-in) ease-in-out;
+  animation: menu-spin-back var(--nav-transition-time-in) ease-in-out;
   animation-fill-mode: forwards;
   backdrop-filter: blur(2px);
   border: none;
@@ -135,33 +135,33 @@
   /* border: 1px solid #fff; */
 }
 .nav__menu__line:nth-child(1) {
-  transition: var(--transision-time-in);
+  transition: var(--nav-transition-time-in);
   transform: rotate(0) translate(0);
 }
 .nav__menu__line:nth-child(2) {
   opacity: 1;
-  transition: var(--transision-time-in);
+  transition: var(--nav-transition-time-in);
   transform: rotate(0);
 }
 .nav__menu__line:nth-child(3) {
-  transition: var(--transision-time-in);
+  transition: var(--nav-transition-time-in);
   transform: rotate(0) translate(0);
 }
 .show-nav__menu .nav__menu__line:nth-child(1) {
-  transition: var(--transision-time-out);
+  transition: var(--nav-transition-time-out);
   transform: rotate(45deg) translate(0.8rem, 0.8rem);
 }
 .show-nav__menu .nav__menu__line:nth-child(2) {
   opacity: 0;
-  transition: var(--transision-time-out);
+  transition: var(--nav-transition-time-out);
   transform: rotate(360deg);
 }
 .show-nav__menu .nav__menu__line:nth-child(3) {
-  transition: var(--transision-time-out);
+  transition: var(--nav-transition-time-out);
   transform: rotate(-45deg) translate(0.8rem, -0.9rem);
 }
 .show-nav__menu {
-  animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
+  animation: menu-spin var(--nav-transition-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
   animation-fill-mode: forwards;
 }
 @keyframes menu-spin {
