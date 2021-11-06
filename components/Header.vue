@@ -350,7 +350,7 @@ export default {
   methods: {
     scrollTo: function (hashtag) {
       setTimeout(() => {
-        location.to = hashtag
+        location.href = hashtag
       }, 1)
     },
   },
