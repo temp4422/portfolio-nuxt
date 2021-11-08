@@ -1,5 +1,5 @@
 <style scoped>
-/* * {
+* {
   border-radius: 8px;
 }
 .object-3d {
@@ -58,7 +58,7 @@
 }
 .p-easter:hover {
   opacity: 1;
-} */
+}
 </style>
 
 <template>
@@ -66,7 +66,7 @@
     <h1 class="content-center text-center text-4xl m-5 p-10">PLAYGROUND</h1>
     <!-- <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls> </model-viewer> -->
 
-    <!-- <section class="section section-guess-number">
+    <section class="section section-guess-number">
       <h1 class="h1">GUESS NUMBER 1.0</h1>
       <p class="p">Guess a random number between 1 and 100. Can you ?</p>
       <div class="form guess-number__form">
@@ -82,25 +82,25 @@
       </div>
 
       <p class="p p-easter" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')">Did you find easter ?</p>
-    </section> -->
+    </section>
 
-    <section class="section section-guess-number">
+    <!-- <section class="section section-guess-number">
       <h1 class="text-center text-3xl m-10 text-green-500" style="">GUESS NUMBER GAME 1.0</h1>
       <p class="text-center m-4">Guess a random number between 1 and 100. Can you ?</p>
       <div class="form guess-number__form m-10 grid gap-2 justify-center justify-items-center">
         <label class="guess-number__form__label" for="guessField">Enter a guess: </label>
-        <input class="guessField guess-number__form__input max-w-30rem bg-bg-gray-500 rounded-xl" type="text" id="guessField" />
-        <input class="guessSubmit guess-number__form__submit bg-bg-gray-700 text-green-800 text-shadow-lg text-2xl rounded-xl" type="submit" value="Guess!" />
+        <input class="guessField guess-number__form__input max-w-30rem bg-gray-400 rounded-xl" type="text" id="guessField" />
+        <input class="guessSubmit guess-number__form__submit bg-gray-500 text-green-800 text-shadow-lg text-2xl rounded-xl" type="submit" value="Guess!" />
       </div>
 
-      <div class="resultParas guess-number__results grid m-10">
-        <p class="guesses guess-number__results__guesses"></p>
+      <div class="resultParas guess-number__results grid m-10 place-items-center">
+        <p class="guesses guess-number__results__guesses w-20 h-10 bg-indigo-500 rounded-xl"></p>
         <p class="lastResult guess-number__results__last-result"></p>
         <p class="lowOrHi guess-number__results__low-or-hi"></p>
       </div>
 
       <p class="text-center" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')">Did you find easter ?</p>
-    </section>
+    </section> -->
 
     <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
   </main>
@@ -187,10 +187,10 @@ export default {
     }
 
     // Styling
-    guesses.style.backgroundColor = 'indigo'
-    guesses.style.fontSize = '200%'
-    guesses.style.padding = '10px'
-    guesses.style.boxShadow = '3px 3px 6px black'
+    // guesses.style.backgroundColor = 'indigo'
+    // guesses.style.fontSize = '200%'
+    // guesses.style.padding = '10px'
+    // guesses.style.boxShadow = '3px 3px 6px black'
   },
 }
 </script>
