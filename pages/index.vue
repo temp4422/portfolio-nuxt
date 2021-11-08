@@ -37,7 +37,12 @@
   margin: 4rem 0 0 0;
   border-radius: 20px;
   overflow: hidden;
+  transition: var(--nav-transition-time-out);
   filter: var(--shadow-main-item);
+}
+.work-item:hover {
+  transition: var(--nav-transition-time-in);
+  filter: var(--shadow-small);
 }
 .work-item__div {
   overflow: hidden;
@@ -96,21 +101,21 @@
     <section class="section section-works" id="works">
       <h1 class="h1 h1-works">MY WORKS</h1>
       <div class="works-container">
-        <a class="a work-item js-scroll slide-in-left" href="https://www.x-drive.ua/">
+        <a class="a work-item" href="https://www.x-drive.ua/">
           <div class="work-item__div work-item__x-drive">
             <img class="img" src="~/assets/img/jpg/x-drive.jpg" width="1280" height="720" alt="x-drive" />
           </div>
         </a>
         <p class="p-center js-scroll fade-in-bottom">X-drive.ua - smooth and fast with nuxt.js</p>
 
-        <a class="a work-item js-scroll slide-in-right" href="https://solomia-portfolio.netlify.app/">
+        <a class="a work-item" href="https://solomia-portfolio.netlify.app/">
           <div class="work-item__div work-item__solomia">
             <img class="img" src="~/assets/img/jpg/solomia.jpg" width="1280" height="720" alt="solomia-portfolio" />
           </div>
         </a>
         <p class="p-center js-scroll fade-in-bottom">Artful portfolio</p>
 
-        <a class="a work-item js-scroll slide-in-left" href="/playground">
+        <a class="a work-item" href="/playground">
           <div class="work-item__div work-item__playground">
             <img class="img playground-img" src="~/assets/img/jpg/playground.jpg" width="1280" height="720" alt="playground" />
           </div>

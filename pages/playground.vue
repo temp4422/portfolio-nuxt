@@ -4,8 +4,20 @@
 }
 .object-3d {
   border-radius: 20px;
-  margin: 10rem auto;
+  margin: 2rem auto;
   height: 20rem;
+}
+.h1-playground {
+  margin: 4rem 0;
+}
+.h2-play-3d {
+  margin: 2rem 0;
+}
+.h2-guess-number {
+  margin: 4rem 0 2rem 0;
+}
+.p-guess {
+  text-align: center;
 }
 .section-guess-number {
   height: auto;
@@ -22,32 +34,60 @@
   margin: 0 0 1rem 0;
 }
 .guess-number__form__input {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   max-width: 10rem;
   height: 2rem;
+  background: var(--color);
+  filter: var(--shadow-small);
 }
 .guess-number__form__submit {
   display: block;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   max-width: 10rem;
   height: 2rem;
+  background: var(--color-second);
+  cursor: pointer;
+  filter: var(--shadow-small);
+  transition: var(--transition-main-in);
 }
-
+.guess-number__form__submit:hover {
+  filter: var(--shadow-hover);
+  transition: var(--transition-main-out);
+}
 .guess-number__results {
-  min-width: 10rem;
-  width: 60%;
   margin: 2rem 0;
   display: grid;
   place-items: center;
+  display: grid;
+  place-items: center;
+  place-content: center;
 }
 .guess-number__results__guesses {
-  min-height: 2rem;
+  height: auto;
+  width: auto;
+  min-width: 10rem;
+  text-align: center;
+  background: #cecece38;
+  margin: 1rem;
+  padding: 1rem;
+  filter: var(--shadow-small);
 }
+
 .guess-number__results__last-result {
   height: auto;
+  width: 10rem;
+  text-align: center;
+  margin: 1rem;
+  padding: 0.5rem;
+  filter: var(--shadow-small);
+  color: var(--bg);
 }
 .guess-number__results__low-or-hi {
   height: auto;
+  text-align: center;
+  margin: 1rem;
+  background: #cecece38;
+  filter: var(--shadow-small);
 }
 .p-easter {
   height: auto;
@@ -63,12 +103,19 @@
 
 <template>
   <main class="main">
-    <h1 class="content-center text-center text-4xl m-5 p-10">PLAYGROUND</h1>
-    <!-- <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls> </model-viewer> -->
+    <h1 class="h1 h1-playground">PLAYGROUND</h1>
+    <section class="section section-guess-number">
+      <h2 class="h2 h2-play-3d">Play with 3D object</h2>
+
+      <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls> </model-viewer>
+    </section>
 
     <section class="section section-guess-number">
-      <h1 class="h1">GUESS NUMBER 1.0</h1>
-      <p class="p">Guess a random number between 1 and 100. Can you ?</p>
+      <h2 class="h2 h2-guess-number">GUESS NUMBER 1.0</h2>
+      <p class="p p-guess">
+        Guess a random number between 1 and 100.<br />
+        Can you ?
+      </p>
       <div class="form guess-number__form">
         <label class="guess-number__form__label" for="guessField">Enter a guess: </label>
         <input class="guessField guess-number__form__input" type="text" id="guessField" />
@@ -102,7 +149,7 @@
       <p class="text-center" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')">Did you find easter ?</p>
     </section> -->
 
-    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
+    <script defer type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   </main>
 </template>
 

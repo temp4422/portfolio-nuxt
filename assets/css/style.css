@@ -35,7 +35,8 @@ Rampart One, Kalam, Roboto
   --nav-links-gap: 1rem;
   --border-radius: 8px;
 
-  --shadow: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+  --shadow-small: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.25));
+  --shadow-normal: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
   --shadow-big: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
   --shadow-hover: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
 
@@ -66,7 +67,8 @@ Rampart One, Kalam, Roboto
   --nav-links-gap: 1rem;
   --border-radius: 8px;
 
-  --shadow: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+  --shadow-small: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+  --shadow-normal: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
   --shadow-big: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
   --shadow-hover: invert(81%) sepia(0%) saturate(3%) hue-rotate(48deg) brightness(101%) contrast(93%) drop-shadow(0 0 0.25rem rgb(255, 255, 255));
 

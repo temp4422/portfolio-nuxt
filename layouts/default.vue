@@ -1,5 +1,4 @@
 <style>
-
 *,
 *::before,
 *::after {
@@ -23,7 +22,7 @@ body {
   height: auto; /*DON NOT CHANGE HEIGHT AND MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
   max-height: 100%;
   scroll-behavior: smooth;
-  transition: var(--transition-main-out);; /* Apply theme */
+  transition: var(--transition-main-out); /* Apply theme */
 }
 .root {
   max-width: 768px;
@@ -63,12 +62,19 @@ body {
   display: inline-block;
 }
 .h1 {
+  height: auto;
   display: inline-block;
   text-align: center;
   margin: 2rem 0;
-  overflow: hidden;
+}
+.h2 {
+  height: auto;
+  display: inline-block;
+  text-align: center;
+  margin: 2rem 0;
 }
 .p {
+  height: auto;
   margin: 2rem 0;
   overflow: hidden;
 }
@@ -85,11 +91,11 @@ body {
 }
 .svg {
   cursor: pointer;
-  transition: var(--transition-main-out);;
-  filter: var(--shadow);
+  transition: var(--transition-main-out);
+  filter: var(--shadow-normal);
 }
 .svg:hover {
-  transition: var(--transition-main-in);;
+  transition: var(--transition-main-in);
   filter: var(--shadow-hover);
 }
 
