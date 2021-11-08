@@ -11,7 +11,7 @@ Rampart One, Kalam, Roboto
 
 /* The pageTransition Property https://nuxtjs.org/docs/2.x/features/transitions */
 .page-enter-active,
-xxxxx.page-leave-active {
+.page-leave-active {
   transition: opacity 0.5s;
 }
 .page-enter,
