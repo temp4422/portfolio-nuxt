@@ -25,7 +25,6 @@
 }
 .works-container {
   max-width: 30rem;
-  /* margin: 2rem 0; */
   padding: 2rem;
   display: grid;
   place-items: center;
