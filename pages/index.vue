@@ -119,11 +119,6 @@
         </h1>
       </div>
       <p class="p p-center quote-intro js-scroll fade-in-bottom" v-html="$t('quote-intro')"></p>
-
-      <div class="nav-menu-lang">
-        <nuxt-link :to="switchLocalePath('uk')">укр</nuxt-link>
-        <nuxt-link :to="switchLocalePath('en')">eng</nuxt-link>
-      </div>
     </section>
 
     <!-- WORKS -->

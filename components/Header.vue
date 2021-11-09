@@ -54,6 +54,11 @@
 .language-svg {
   justify-self: start;
   width: 3rem;
+  transition: var(--nav-transition-time-in);
+}
+.language-svg:active {
+  transition: var(--nav-transition-time-out);
+  opacity: 0;
 }
 .moon-svg {
   animation: unhide 1s ease both;
@@ -250,7 +255,14 @@
         </div>
 
         <div class="nav__panel__bottom">
-          <div class="svg nav__svg language-svg">
+          <!-- https://i18n.nuxtjs.org/lang-switcher -->
+          <NuxtLink
+            v-for="locale in availableLocales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)"
+            @click.native="scrollTo('')"
+            class="svg nav__svg language-svg js-language-switcher"
+          >
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M4 16h40M24 46c12.15 0 22-9.85 22-22S36.15 2 24 2 2 11.85 2 24s9.85 22 22 22Zm0 0c6 0 8-10 8-22S30 2 24 2s-8 10-8 22 2 22 8 22ZM4 32h40H4Z"
@@ -258,7 +270,7 @@
                 stroke-width="4"
               />
             </svg>
-          </div>
+          </NuxtLink>
 
           <div class="svg nav__svg sun-svg js-theme-switcher hide">
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -310,6 +322,22 @@ export default {
       item.addEventListener('click', showMenu, false)
     })
 
+    // Language switcher
+    // const languageSwtichButtons = document.querySelectorAll('.js-language-switcher')
+    // languageSwtichButtons.forEach((item) => {
+    //   item.addEventListener('click', languageSwitcher, false)
+    // })
+
+    // function languageSwitcher() {
+
+    //   //switch locale
+    //   if (local = uk) {
+    //     go to en
+    //   }
+    //   else go to uk
+    //   })
+    // }
+
     // Theme switcher
     const themeSwtichButtons = document.querySelectorAll('.js-theme-switcher')
     const html = document.querySelector('html')
@@ -335,6 +363,11 @@ export default {
       setTimeout(() => {
         location.href = hashtag
       }, 1)
+    },
+  },
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
     },
   },
 }
