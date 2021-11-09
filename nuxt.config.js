@@ -30,7 +30,33 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/i18n'],
+
+  i18n: {
+    locales: [
+      { code: 'en', iso: 'en-US' },
+      {
+        code: 'uk',
+        iso: 'uk-UA',
+        // isCatchallLocale: true, // This one will be used as catchall locale
+      },
+      // { code: 'ru', iso: 'ru-RU' },
+    ],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+    },
+    vueI18nLoader: true, // Allow translations using custom blocks in Vue files e.g. <i18n>...</i18n>
+    detectBrowserLanguage: false,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true, // recommended for better SEO
+    },
+    // SEO
+    baseUrl: 'https://x-portfolio.netlify.app', // Set baseUrl to make alternate URLs fully-qualified
+    seo: true,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

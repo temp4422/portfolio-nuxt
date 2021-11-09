@@ -1,3 +1,30 @@
+<i18n>
+{
+  "en": {
+    "quote-intro": "It is an exciting time to work on the web. The pace of change is daunting, but there is great opportunity for those with open, curious minds.",
+    "h1-works": "PROJECTS",
+    "x-drive.ua": "X-drive.ua - smooth and fast on top of futuristic frameworks",
+    "artful-portfolio": "Artful portfolio",
+    "interactive-playground": "An interactive playground",
+    "h1-about": "ABOUT",
+    "about-text1": "Building responsive mobile first websites.",
+    "about-text2": "You can't build what you can't imagine. Therefore, with modern web technologies, you can build what ever you want.",
+    "about-text3": "Learning and working with JAMstack - most rapid and advanced web technologies stack for increased speed and reliability."
+  },
+  "uk": {
+    "quote-intro": "Це захоплюючий час для роботи у вебі. Швидкість змін лякаюча, але водночас це можливості для тих, хто має відjкритий і допитливий розум.",
+    "h1-works": "ПРОЄКТИ",
+    "x-drive.ua": "X-drive.ua - плавний і швидкий поверх футуристичних фреймворків",
+    "artful-portfolio": "Художнє портфоліо",
+    "interactive-playground": "Інтерактивний майданчик",
+    "h1-about": "ПРО",
+    "about-text1": "Створення адаптивних веб-сайтів для мобільних пристроїв.",
+    "about-text2": "Ви не можете побудувати те, що не можете уявити. За допомогою сучасних веб-технологій ви можете створювати все, що завгодно.",
+    "about-text3": "Робота з JAMstack - найшвидшим і передовим стеком веб-технологій для підвищення швидкості та надійності."
+  }
+}
+</i18n>
+
 <style>
 /****************************** SECTIONS ******************************/
 /* SECTION-HOME */
@@ -91,42 +118,45 @@
           <!-- Greetigns! -->
         </h1>
       </div>
-      <p class="p p-center quote-intro js-scroll fade-in-bottom">
-        It is an exciting time to work on the web. The pace of change is daunting, but there is great opportunity for those with open, curious minds.
-      </p>
+      <p class="p p-center quote-intro js-scroll fade-in-bottom" v-html="$t('quote-intro')"></p>
+
+      <div class="nav-menu-lang">
+        <nuxt-link :to="switchLocalePath('uk')">укр</nuxt-link>
+        <nuxt-link :to="switchLocalePath('en')">eng</nuxt-link>
+      </div>
     </section>
 
     <!-- WORKS -->
     <section class="section section-works" id="works">
-      <h1 class="h1 h1-works">MY WORKS</h1>
+      <h1 class="h1 h1-works" v-html="$t('h1-works')"></h1>
       <div class="works-container">
         <a class="a work-item" href="https://www.x-drive.ua/">
           <div class="work-item__div work-item__x-drive">
             <img class="img" src="~/assets/img/jpg/x-drive.jpg" width="1280" height="720" alt="x-drive" />
           </div>
         </a>
-        <p class="p-center js-scroll fade-in-bottom">X-drive.ua - smooth and fast with nuxt.js</p>
+        <p class="p-center js-scroll fade-in-bottom" v-html="$t('x-drive.ua')">X-drive.ua - smooth and fast on top of futuristic frameworks</p>
 
         <a class="a work-item" href="https://solomia-portfolio.netlify.app/">
           <div class="work-item__div work-item__solomia">
             <img class="img" src="~/assets/img/jpg/solomia.jpg" width="1280" height="720" alt="solomia-portfolio" />
           </div>
         </a>
-        <p class="p-center js-scroll fade-in-bottom">Artful portfolio</p>
+        <p class="p-center js-scroll fade-in-bottom" v-html="$t('artful-portfolio')"></p>
 
         <a class="a work-item" href="/playground">
           <div class="work-item__div work-item__playground">
             <img class="img playground-img" src="~/assets/img/jpg/playground.jpg" width="1280" height="720" alt="playground" />
           </div>
         </a>
-        <p class="test2 p-center js-scroll fade-in-bottom" style="display: inline-block">An interactive playground</p>
+        <p class="test2 p-center js-scroll fade-in-bottom" v-html="$t('interactive-playground')"></p>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section class="section section-about" id="about">
-      <h1 class="h1 h1-about">ABOUT</h1>
-      <p class="p-center about-text">Building responsive mobile first websites.</p>
+      <h1 class="h1 h1-about" v-html="$t('h1-about')"></h1>
+      <p class="p-center about-text" v-html="$t('about-text1')"></p>
       <div class="about-web">
         <div class="svg about-web__svg js-scroll fade-in">
           <svg fill="none" height="100" width="87" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 141.532">
@@ -157,8 +187,8 @@
           </svg>
         </div>
       </div>
-      <p class="p">You can't build what you can't imagine. Therefore, with modern web technologies, you can build what ever you want.</p>
-      <div class="svg jamstack-logo js-scroll fade-in">
+      <p class="p" v-html="$t('about-text2')"></p>
+      <a href="https://jamstack.org/" class="svg jamstack-logo js-scroll fade-in">
         <svg width="602" height="173" viewBox="150 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill="none" d="M0 0h602v173H0z" />
           <path
@@ -172,8 +202,8 @@
             fill="#fff"
           />
         </svg>
-      </div>
-      <p class="p">Learning and working with JAMstack, most rapid and advanced web technologies stack for increased speed and reliability.</p>
+      </a>
+      <p class="p" v-html="$t('about-text3')"></p>
     </section>
   </main>
 </template>

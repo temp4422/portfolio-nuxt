@@ -1,3 +1,16 @@
+<i18n>
+{
+  "en": {
+    "h1-contact": "CONTACTS",
+    "built": "Built with Nuxt, Netlify, Google and sincere developer's efforts :)"
+  },
+  "uk": {
+    "h1-contact": "КОНТАКТИ",
+    "built": "Створено за допомогою Nuxt, Netlify, Google та щирих зусиль розробника :)"
+  }
+}
+</i18n>
+
 <style>
 .footer {
   display: grid;
@@ -24,9 +37,9 @@
 
 <template>
   <footer class="footer" id="footer">
-    <h1 class="h1 h1-contact" id="contact">CONTACTS</h1>
+    <h1 class="h1 h1-contact" id="contact" v-html="$t('h1-contact')"></h1>
     <div class="footer-container">
-      <a href="">
+      <a class="footer-mail" href="mailto:work.temp4422@gmail.com">
         <div class="svg svg-footer js-scroll fade-in">
           <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -37,7 +50,7 @@
         </div>
       </a>
 
-      <a href="">
+      <a class="footer-github" href="https://github.com/webdev4422">
         <div class="svg svg-footer js-scroll fade-in-delay-2">
           <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -50,7 +63,7 @@
         </div>
       </a>
 
-      <a href="">
+      <a class="footer-codepen" href="https://codepen.io/webdev4422">
         <div class="svg svg-footer js-scroll fade-in-delay-3">
           <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#a)">
@@ -70,7 +83,7 @@
         </div>
       </a>
 
-      <a href="">
+      <a class="footer-freecodecamp" href="https://www.freecodecamp.org/fcc81c57a41-6f06-4034-a589-9f248e7a61e3">
         <div class="svg svg-footer js-scroll fade-in-delay-4">
           <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#a)">
@@ -90,7 +103,7 @@
     </div>
 
     <div class="p p-center">
-      <p>Built with Nuxt, Netlify, Google and sincere developer's efforts :)</p>
+      <p v-html="$t('built')"></p>
     </div>
   </footer>
 </template>

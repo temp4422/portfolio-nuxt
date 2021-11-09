@@ -10,6 +10,7 @@
     "prod": "nuxi generate && sudo rm -r /var/www/html/* && sudo cp -r dist/* /var/www/html/"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^7.2.0",
     "core-js": "^3.15.1",
     "nuxt-edge": "latest"
   },
