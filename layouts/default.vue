@@ -16,7 +16,7 @@ html {
 }
 body {
   box-sizing: border-box;
-  font-family: 'Kalam', 'Roboto', sans-serif;
+  font-family: 'Segoe Print', sans-serif;
   background: var(--bg);
   color: var(--color);
   height: auto; /*DON NOT CHANGE HEIGHT AND MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/

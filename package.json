@@ -15,6 +15,7 @@
     "nuxt-edge": "latest"
   },
   "devDependencies": {
-    "@nuxt/bridge": "npm:@nuxt/bridge-edge"
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge",
+    "@nuxt/image": "^0.6.0"
   }
 }

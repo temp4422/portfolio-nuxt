@@ -127,21 +127,22 @@
       <div class="works-container">
         <a aria-label="Link to different domain" class="a work-item" href="https://www.x-drive.ua/">
           <div class="work-item__div work-item__x-drive">
-            <img class="img" src="~/assets/img/jpg/x-drive.jpg" width="1280" height="720" alt="x-drive" />
+            <!-- <img class="img" src="~/assets/img/jpg/x-drive.jpg" width="1280" height="720" alt="x-drive" /> -->
+            <nuxt-picture class="img" src="/img/jpg/x-drive.jpg" width="1280" height="720" alt="x-drive" />
           </div>
         </a>
         <p class="p-center js-scroll fade-in-bottom" v-html="$t('x-drive.ua')">X-drive.ua - smooth and fast on top of futuristic frameworks</p>
 
         <a aria-label="Link to different domain" class="a work-item" href="https://solomia-portfolio.netlify.app/">
           <div class="work-item__div work-item__solomia">
-            <img class="img" src="~/assets/img/jpg/solomia.jpg" width="1280" height="720" alt="solomia-portfolio" />
+            <nuxt-picture class="img" src="/img/jpg/solomia.jpg" width="1280" height="720" alt="solomia-portfolio" />
           </div>
         </a>
         <p class="p-center js-scroll fade-in-bottom" v-html="$t('artful-portfolio')"></p>
 
         <a aria-label="Link to different domain" class="a work-item" href="/playground">
           <div class="work-item__div work-item__playground">
-            <img class="img playground-img" src="~/assets/img/jpg/playground.jpg" width="1280" height="720" alt="playground" />
+            <nuxt-picture class="img playground-img" src="/img/jpg/playground.jpg" width="1280" height="720" alt="playground" />
           </div>
         </a>
         <p class="test2 p-center js-scroll fade-in-bottom" v-html="$t('interactive-playground')"></p>

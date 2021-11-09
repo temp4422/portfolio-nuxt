@@ -22,7 +22,6 @@ export default {
       { hid: 'generator', name: 'generator', content: 'Nuxt.js' },
       { hid: 'referrer', name: 'referrer', content: 'strict-origin-when-cross-origin' }, // https://web.dev/referrer-best-practices
       { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
-
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -37,7 +36,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: ['@nuxt/image'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/i18n'],
@@ -68,6 +67,18 @@ export default {
     seo: true,
   },
 
+  image: {
+    // Change default 'static' directory
+    dir: 'assets/',
+    presets: {
+      main: {
+        modifiers: {
+          fit: 'cover',
+          format: 'webp',
+        },
+      },
+    },
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
