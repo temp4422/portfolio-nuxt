@@ -125,21 +125,21 @@
     <section class="section section-works" id="works">
       <h1 class="h1 h1-works" v-html="$t('h1-works')"></h1>
       <div class="works-container">
-        <a class="a work-item" href="https://www.x-drive.ua/">
+        <a aria-label="Link to different domain" class="a work-item" href="https://www.x-drive.ua/">
           <div class="work-item__div work-item__x-drive">
             <img class="img" src="~/assets/img/jpg/x-drive.jpg" width="1280" height="720" alt="x-drive" />
           </div>
         </a>
         <p class="p-center js-scroll fade-in-bottom" v-html="$t('x-drive.ua')">X-drive.ua - smooth and fast on top of futuristic frameworks</p>
 
-        <a class="a work-item" href="https://solomia-portfolio.netlify.app/">
+        <a aria-label="Link to different domain" class="a work-item" href="https://solomia-portfolio.netlify.app/">
           <div class="work-item__div work-item__solomia">
             <img class="img" src="~/assets/img/jpg/solomia.jpg" width="1280" height="720" alt="solomia-portfolio" />
           </div>
         </a>
         <p class="p-center js-scroll fade-in-bottom" v-html="$t('artful-portfolio')"></p>
 
-        <a class="a work-item" href="/playground">
+        <a aria-label="Link to different domain" class="a work-item" href="/playground">
           <div class="work-item__div work-item__playground">
             <img class="img playground-img" src="~/assets/img/jpg/playground.jpg" width="1280" height="720" alt="playground" />
           </div>
@@ -183,7 +183,7 @@
         </div>
       </div>
       <p class="p" v-html="$t('about-text2')"></p>
-      <a href="https://jamstack.org/" class="svg jamstack-logo js-scroll fade-in">
+      <a aria-label="Link to different domain" href="https://jamstack.org/" class="svg jamstack-logo js-scroll fade-in">
         <svg width="602" height="173" viewBox="150 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill="none" d="M0 0h602v173H0z" />
           <path

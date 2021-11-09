@@ -11,8 +11,18 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'x-drive.ua admin own portfolio' },
       { name: 'format-detection', content: 'telephone=no' },
+
+      { hid: 'keywords', name: 'keywords', content: 'portfolio' },
+      { hid: 'application-name', name: 'application-name', content: 'x-portfolio' },
+      { hid: 'author', name: 'author', content: 'Andrii Mariichyn' },
+      { hid: 'theme-color', name: 'theme-color', content: '#202020' },
+      { hid: 'color-scheme', name: 'color-scheme', content: 'dark ' },
+      { hid: 'generator', name: 'generator', content: 'Nuxt.js' },
+      { hid: 'referrer', name: 'referrer', content: 'strict-origin-when-cross-origin' }, // https://web.dev/referrer-best-practices
+      { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
+
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },

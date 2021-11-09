@@ -191,14 +191,14 @@
 <template>
   <header class="header" id="header">
     <nav class="nav">
-      <button class="nav__menu">
+      <button class="nav__menu" aria-label="Menu button">
         <div class="nav__menu__line"></div>
         <div class="nav__menu__line"></div>
         <div class="nav__menu__line"></div>
       </button>
       <div class="nav__panel">
         <div class="nav__panel__top">
-          <NuxtLink class="a nav__link" to="/#home" @click.native="scrollTo('#home')"
+          <NuxtLink aria-label="Link to page id" class="a nav__link" to="/#home" @click.native="scrollTo('#home')"
             ><div class="svg nav__svg home-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -208,7 +208,7 @@
                 />
               </svg></div
           ></NuxtLink>
-          <NuxtLink class="a nav__link" to="/#works" @click.native="scrollTo('#works')">
+          <NuxtLink aria-label="Link to page id" class="a nav__link" to="/#works" @click.native="scrollTo('#works')">
             <div class="svg nav__svg work-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -221,7 +221,7 @@
               </svg>
             </div>
           </NuxtLink>
-          <NuxtLink class="a nav__link" to="/#about" @click.native="scrollTo('#about')">
+          <NuxtLink aria-label="Link to page id" class="a nav__link" to="/#about" @click.native="scrollTo('#about')">
             <div class="svg nav__svg about-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
@@ -232,7 +232,7 @@
               </svg>
             </div>
           </NuxtLink>
-          <NuxtLink class="a nav__link" to="#contact" @click.native="scrollTo('#contact')">
+          <NuxtLink aria-label="Link to page id" class="a nav__link" to="#contact" @click.native="scrollTo('#contact')">
             <div class="svg nav__svg contact-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -242,7 +242,7 @@
               </svg>
             </div>
           </NuxtLink>
-          <NuxtLink class="a nav__link" to="/playground">
+          <NuxtLink aria-label="Link to page id" class="a nav__link" to="/playground">
             <div class="svg nav__svg play-svg">
               <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -257,6 +257,7 @@
         <div class="nav__panel__bottom">
           <!-- https://i18n.nuxtjs.org/lang-switcher -->
           <NuxtLink
+            aria-label="Link to page id"
             v-for="locale in availableLocales"
             :key="locale.code"
             :to="switchLocalePath(locale.code)"
