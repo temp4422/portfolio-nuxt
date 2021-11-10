@@ -132,7 +132,7 @@
     <section class="section section-play-3d">
       <h2 class="h2 h2-play-3d" v-html="$t('h2-play-3d')"></h2>
 
-      <!-- <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls></model-viewer> -->
+      <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls></model-viewer>
     </section>
 
     <section class="section section-guess-number">
@@ -153,7 +153,7 @@
       <p class="p p-easter" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')" v-html="$t('easter')"></p>
     </section>
 
-    <!-- <script defer type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
+    <script defer type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   </main>
 </template>
 
