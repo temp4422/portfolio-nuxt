@@ -1,3 +1,23 @@
+<i18n>
+{
+  "en": {
+    "h1-playground": "PLAYGROUND",
+    "h2-play-3d": "Play with 3D object",
+    "h2-guess-number": "GUESS NUMBER 1.0",
+    "guess-num": "Guess a random number between 1 and 100.<br />Can you ?",
+    "enter-guess": "Enter a guess:",
+    "easter": "Did you find easter ?"
+  },
+  "uk": {
+    "h1-playground": "ІГРОВИЙ МАЙДАНЧИК",
+    "h2-play-3d": "Грайте з 3D-об'єктом",
+    "h2-guess-number": "ВІДГАДАЙТЕ ЧИСЛО 1.0",
+    "guess-num": "Вгадайте випадкове число від 1 до 100.<br /> Зможете?",
+    "enter-guess": "Введіть припущення:",
+    "easter": "Ви знайшли секрет?"
+  }
+}
+</i18n>
 <style scoped>
 * {
   border-radius: 8px;
@@ -107,21 +127,18 @@
 
 <template>
   <main class="main">
-    <h1 class="h1 h1-playground">PLAYGROUND</h1>
+    <h1 class="h1 h1-playground" v-html="$t('h1-playground')"></h1>
     <section class="section section-guess-number">
-      <h2 class="h2 h2-play-3d">Play with 3D object</h2>
+      <h2 class="h2 h2-play-3d" v-html="$t('h2-play-3d')"></h2>
 
       <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls> </model-viewer>
     </section>
 
     <section class="section section-guess-number">
-      <h2 class="h2 h2-guess-number">GUESS NUMBER 1.0</h2>
-      <p class="p p-guess">
-        Guess a random number between 1 and 100.<br />
-        Can you ?
-      </p>
+      <h2 class="h2 h2-guess-number" v-html="$t('h2-guess-number')"></h2>
+      <p class="p p-guess" v-html="$t('guess-num')"></p>
       <div class="form guess-number__form">
-        <label class="guess-number__form__label" for="guessField">Enter a guess: </label>
+        <label class="guess-number__form__label" for="guessField" v-html="$t('enter-guess')"></label>
         <input class="guessField guess-number__form__input" type="text" id="guessField" />
         <input class="guessSubmit guess-number__form__submit" type="submit" value="Guess!" />
       </div>
@@ -132,7 +149,7 @@
         <p class="lowOrHi guess-number__results__low-or-hi"></p>
       </div>
 
-      <p class="p p-easter" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')">Did you find easter ?</p>
+      <p class="p p-easter" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')" v-html="$t('easter')"></p>
     </section>
 
     <!-- <section class="section section-guess-number">
