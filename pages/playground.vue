@@ -4,9 +4,9 @@
     "h1-playground": "PLAYGROUND",
     "h2-play-3d": "Play with 3D object",
     "h2-guess-number": "GUESS NUMBER 1.0",
-    "guess-num": "Guess a random number between 1 and 100.<br />Can you ?",
+    "guess-num": "Guess a random number between 1 and 100.<br />Can you?",
     "enter-guess": "Enter a guess:",
-    "easter": "Did you find easter ?"
+    "easter": "Did you find easter?"
   },
   "uk": {
     "h1-playground": "ІГРОВИЙ МАЙДАНЧИК",
@@ -19,6 +19,7 @@
 }
 </i18n>
 <style scoped>
+/* General */
 * {
   border-radius: 8px;
 }
@@ -128,10 +129,10 @@
 <template>
   <main class="main">
     <h1 class="h1 h1-playground" v-html="$t('h1-playground')"></h1>
-    <section class="section section-guess-number">
+    <section class="section section-play-3d">
       <h2 class="h2 h2-play-3d" v-html="$t('h2-play-3d')"></h2>
 
-      <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls> </model-viewer>
+      <!-- <model-viewer class="object-3d" alt="object" src="/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls></model-viewer> -->
     </section>
 
     <section class="section section-guess-number">
@@ -152,25 +153,7 @@
       <p class="p p-easter" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')" v-html="$t('easter')"></p>
     </section>
 
-    <!-- <section class="section section-guess-number">
-      <h1 class="text-center text-3xl m-10 text-green-500" style="">GUESS NUMBER GAME 1.0</h1>
-      <p class="text-center m-4">Guess a random number between 1 and 100. Can you ?</p>
-      <div class="form guess-number__form m-10 grid gap-2 justify-center justify-items-center">
-        <label class="guess-number__form__label" for="guessField">Enter a guess: </label>
-        <input class="guessField guess-number__form__input max-w-30rem bg-gray-400 rounded-xl" type="text" id="guessField" />
-        <input class="guessSubmit guess-number__form__submit bg-gray-500 text-green-800 text-shadow-lg text-2xl rounded-xl" type="submit" value="Guess!" />
-      </div>
-
-      <div class="resultParas guess-number__results grid m-10 place-items-center">
-        <p class="guesses guess-number__previous__guesses w-20 h-10 bg-indigo-500 rounded-xl"></p>
-        <p class="lastResult guess-number__results__last-result"></p>
-        <p class="lowOrHi guess-number__results__low-or-hi"></p>
-      </div>
-
-      <p class="text-center" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')">Did you find easter ?</p>
-    </section> -->
-
-    <!-- <script async defer type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
+    <!-- <script defer type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
   </main>
 </template>
 
@@ -184,6 +167,7 @@ export default {
         //   src: 'https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js',
         //   body: true,
         //   async: true,
+        //   defer: true,
         // },
       ],
     }

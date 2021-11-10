@@ -198,8 +198,8 @@
       </button>
       <div class="nav__panel">
         <div class="nav__panel__top">
-          <NuxtLink aria-label="Link to page id" class="a nav__link" to="/#home" @click.native="scrollTo('#home')"
-            ><div class="svg nav__svg home-svg">
+          <NuxtLink aria-label="Link to page id" class="a nav__link" to="/#home" @click.native="scrollTo('#home')">
+            <div class="svg nav__svg home-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill="none" d="M0 0h48v48H0z" />
                 <path
@@ -232,7 +232,7 @@
               </svg>
             </div>
           </NuxtLink>
-          <NuxtLink aria-label="Link to page id" class="a nav__link" to="#contact" @click.native="scrollTo('#contact')">
+          <NuxtLink aria-label="Link to page id" class="a nav__link" to="/#contact" @click.native="scrollTo('#contact')">
             <div class="svg nav__svg contact-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -302,42 +302,35 @@
 <script scoped>
 export default {
   mounted() {
+    // Scroll to page's anchors https://forum.vuejs.org/t/how-to-handle-anchors-bookmarks-with-vue-router/14563/5
+    if (this.$route.hash) {
+      setTimeout(() => this.scrollTo(this.$route.hash), 1)
+    }
+
     /****************************** Navigation menu ******************************/
     const menu = document.querySelector('.nav__menu')
     const navLinks = document.querySelector('.nav__panel')
     const linkArr = document.querySelectorAll('.nav__link')
     const body = document.querySelector('body')
 
-    function showMenu() {
-      menu.classList.toggle('show-nav__menu')
-      navLinks.classList.toggle('show-nav__panel')
+    function showMenu(e) {
+      if (menu.classList.contains('show-nav__menu')) {
+        menu.classList.remove('show-nav__menu')
+        navLinks.classList.remove('show-nav__panel')
+      } else {
+        menu.classList.add('show-nav__menu')
+        navLinks.classList.add('show-nav__panel')
+      }
       let intViewportWidth = window.innerWidth
       if (intViewportWidth < 768) {
         body.classList.toggle('lock-scroll')
       }
+      e.stopPropagation()
     }
-
     menu.addEventListener('click', showMenu, false)
-
     linkArr.forEach((item) => {
       item.addEventListener('click', showMenu, false)
     })
-
-    // Language switcher
-    // const languageSwtichButtons = document.querySelectorAll('.js-language-switcher')
-    // languageSwtichButtons.forEach((item) => {
-    //   item.addEventListener('click', languageSwitcher, false)
-    // })
-
-    // function languageSwitcher() {
-
-    //   //switch locale
-    //   if (local = uk) {
-    //     go to en
-    //   }
-    //   else go to uk
-    //   })
-    // }
 
     // Theme switcher
     const themeSwtichButtons = document.querySelectorAll('.js-theme-switcher')
@@ -353,20 +346,16 @@ export default {
         item.classList.toggle('hide')
       })
     }
-
-    // Scroll to page's anchors
-    if (this.$route.hash) {
-      setTimeout(() => this.scrollTo(this.$route.hash), 1)
-    }
   },
   methods: {
     scrollTo: function (hashtag) {
       setTimeout(() => {
         location.href = hashtag
-      }, 1)
+      }, 10)
     },
   },
   computed: {
+    // i18n language switcher
     availableLocales() {
       return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
     },
