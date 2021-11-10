@@ -232,7 +232,7 @@
               </svg>
             </div>
           </NuxtLink>
-          <NuxtLink aria-label="Link to page id" class="a nav__link" to="/#contact" @click.native="scrollTo('#contact')">
+          <NuxtLink aria-label="Link to page id" class="a nav__link" to="#contact" @click.native="scrollTo('#contact')">
             <div class="svg nav__svg contact-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -300,11 +300,12 @@
 </template>
 
 <script scoped>
+const scrollTimeout = 550
 export default {
   mounted() {
     // Scroll to page's anchors https://forum.vuejs.org/t/how-to-handle-anchors-bookmarks-with-vue-router/14563/5
     if (this.$route.hash) {
-      setTimeout(() => this.scrollTo(this.$route.hash), 1)
+      setTimeout(() => this.scrollTo(this.$route.hash), scrollTimeout)
     }
 
     /****************************** Navigation menu ******************************/
@@ -351,7 +352,7 @@ export default {
     scrollTo: function (hashtag) {
       setTimeout(() => {
         location.href = hashtag
-      }, 10)
+      }, scrollTimeout)
     },
   },
   computed: {
