@@ -242,7 +242,7 @@
               </svg>
             </div>
           </NuxtLink>
-          <NuxtLink aria-label="Link to page id" class="a nav__link" to="/playground">
+          <NuxtLink aria-label="Link to page id" class="a nav__link" to="/playground" @click.native="scrollTo('')">
             <div class="svg nav__svg play-svg">
               <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path

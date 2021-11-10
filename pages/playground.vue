@@ -170,12 +170,24 @@
       <p class="text-center" onclick="alert('Well, try to guess anything else? ... mayby t3rC3S ... ')">Did you find easter ?</p>
     </section> -->
 
-    <script defer type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- <script async defer type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
   </main>
 </template>
 
 <script scoped>
 export default {
+  head() {
+    return {
+      script: [
+        // {
+        //   type: 'module',
+        //   src: 'https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js',
+        //   body: true,
+        //   async: true,
+        // },
+      ],
+    }
+  },
   mounted() {
     // Your JavaScript goes here
     let randomNumber = Math.floor(Math.random() * 100) + 1
