@@ -107,6 +107,7 @@
 
 <template>
   <main class="main">
+    <h1 ></h1>
     <!-- HOME -->
     <section class="section section-home" id="home">
       <div class="typewriter-container">

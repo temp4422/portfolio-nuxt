@@ -35,9 +35,11 @@
 }
 .guess-number__form__input {
   margin: 0.5rem 0;
+  padding: 0.5rem;
   max-width: 10rem;
   height: 2rem;
-  background: var(--color);
+  background: #b8b8b8;
+  color: #202020;
   filter: var(--shadow-small);
 }
 .guess-number__form__submit {
@@ -46,46 +48,48 @@
   max-width: 10rem;
   height: 2rem;
   background: var(--color-second);
+  color: #202020;
   cursor: pointer;
   filter: var(--shadow-small);
   transition: var(--transition-main-in);
+  font-weight: bold;
 }
 .guess-number__form__submit:hover {
   filter: var(--shadow-hover);
   transition: var(--transition-main-out);
 }
 .guess-number__results {
-  margin: 2rem 0;
+  margin: 0.5rem 0;
   display: grid;
   place-items: center;
   display: grid;
   place-items: center;
   place-content: center;
 }
-.guess-number__results__guesses {
-  height: auto;
-  width: auto;
-  min-width: 10rem;
-  text-align: center;
-  background: #cecece38;
-  margin: 1rem;
-  padding: 1rem;
-  filter: var(--shadow-small);
-}
-
 .guess-number__results__last-result {
   height: auto;
   width: 10rem;
   text-align: center;
-  margin: 1rem;
-  padding: 0.5rem;
+  margin: 0.5rem;
+  background: red;
   filter: var(--shadow-small);
   color: var(--bg);
+  transition: var(--transition-main-in);
+}
+.guess-number__previous__guesses {
+  height: auto;
+  width: auto;
+  min-width: 10rem;
+  margin: 0.5rem;
+  text-align: center;
+  background: #cecece38;
+  filter: var(--shadow-small);
 }
 .guess-number__results__low-or-hi {
   height: auto;
+  width: 10rem;
+  margin: 0.5rem;
   text-align: center;
-  margin: 1rem;
   background: #cecece38;
   filter: var(--shadow-small);
 }
@@ -123,8 +127,8 @@
       </div>
 
       <div class="resultParas guess-number__results">
-        <p class="guesses guess-number__results__guesses"></p>
         <p class="lastResult guess-number__results__last-result"></p>
+        <p class="guesses guess-number__previous__guesses"></p>
         <p class="lowOrHi guess-number__results__low-or-hi"></p>
       </div>
 
@@ -141,7 +145,7 @@
       </div>
 
       <div class="resultParas guess-number__results grid m-10 place-items-center">
-        <p class="guesses guess-number__results__guesses w-20 h-10 bg-indigo-500 rounded-xl"></p>
+        <p class="guesses guess-number__previous__guesses w-20 h-10 bg-indigo-500 rounded-xl"></p>
         <p class="lastResult guess-number__results__last-result"></p>
         <p class="lowOrHi guess-number__results__low-or-hi"></p>
       </div>
@@ -175,7 +179,6 @@ export default {
         guesses.textContent = 'Previous guesses: '
       }
       guesses.textContent += userGuess + ' '
-      console.log(userGuess)
       if (userGuess === randomNumber) {
         lastResult.textContent = 'Congratulations! You got it right!'
         lastResult.style.backgroundColor = 'green'
@@ -189,7 +192,7 @@ export default {
         setGameOver()
       } else {
         lastResult.textContent = 'Wrong!'
-        lastResult.style.backgroundColor = 'red'
+        // lastResult.style.backgroundColor = 'red'
         if (userGuess < randomNumber) {
           lowOrHi.textContent = 'Last guess was too low!'
         } else if (userGuess > randomNumber) {
