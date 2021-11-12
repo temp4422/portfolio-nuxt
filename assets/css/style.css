@@ -2,13 +2,38 @@
 // COLORS
 Main color - Mine Shaft (approx.) #202020
 // FONTS
-Rampart One, Kalam, Roboto
+'Segoe Print', 'Rampart One', 'Kalam', 'Roboto', cursive, sans-serif
 */
 
 /****************************** GENERAL ******************************/
 
-/* @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Rampart+One&family=Roboto&family=Satisfy&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap'); */
 
+*,
+*::before,
+*::after {
+  /* set on all elements, so unset on particular */
+  box-sizing: inherit;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+html {
+  overflow: hidden;
+}
+body {
+  box-sizing: border-box;
+  font-family: 'Segoe Print', cursive, sans-serif;
+  background: var(--bg);
+  color: var(--color);
+  height: auto; /*DON NOT CHANGE HEIGHT AND MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
+  max-height: 100%;
+  scroll-behavior: smooth;
+  transition: var(--transition-main-out); /* Apply theme */
+}
 /* The pageTransition Property https://nuxtjs.org/docs/2.x/features/transitions */
 .page-enter-active,
 .page-leave-active {

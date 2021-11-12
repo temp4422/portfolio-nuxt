@@ -1,29 +1,4 @@
 <style>
-*,
-*::before,
-*::after {
-  /* set on all elements, so unset on particular */
-  box-sizing: inherit;
-  overflow-x: hidden;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: 0;
-  margin: 0;
-}
-html {
-  overflow: hidden;
-}
-body {
-  box-sizing: border-box;
-  font-family: 'Segoe Print', sans-serif;
-  background: var(--bg);
-  color: var(--color);
-  height: auto; /*DON NOT CHANGE HEIGHT AND MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
-  max-height: 100%;
-  scroll-behavior: smooth;
-  transition: var(--transition-main-out); /* Apply theme */
-}
 .root {
   max-width: 768px;
   display: grid;
